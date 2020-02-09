@@ -107,6 +107,8 @@
         #center-img{
             z-index:1;
             height:87vh;
+            object-fit: contain;
+            transform-origin: bottom center;
         }
 
         #right-img{
@@ -136,7 +138,7 @@
 
 <body>
     <div id="wrapper">
-        <div id="home">
+        <div id="home" onclick="scroller()">
             <nav>
                 <div id="left-nav">
                     <div class="nav-button">HOME</div>
@@ -163,7 +165,7 @@
 
         </div>
     </div>
-
+<script src="script.js"></script>
 </body>
 
 </html>
