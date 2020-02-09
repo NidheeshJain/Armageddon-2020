@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Armageddon '20</title>
+        <style>
+            @font-face {
+                font-family: Azonix;
+                src: url(./assets/fonts/Azonix.otf) }
+            *{
+                margin:0;
+                padding:0;
+                box-sizing: border-box;
+                font-size:15px;
+                scroll-behavior: smooth;
+            }
+
+            #wrapper{
+                width:100vw;
+                display:flex;
+                flex-direction: column;
+                background-color: black;
+                min-height: 100vh;
+            }
+
+            #home{
+                height:100vh;
+                width:100vw;
+                display:flex;
+                flex-direction: column;
+            }
+
+            nav{
+                background-color:gray;
+                height:100px;
+                width:100vw;
+                display:flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            #left-nav, #right-nav{
+                width:35%;
+                height:100%;
+                /* background-color: azure; */
+                display:flex;
+                flex-direction:row;
+                justify-content: space-between;
+                align-items: center;
+                font-family: Azonix;
+                color:white;
+                letter-spacing: 5px;
+            }
+
+            .nav-button{
+                margin:0 70px 0 70px;
+            }
+
+            .register{
+                border:2px solid #ff00ff;
+                border-radius: 15px;
+                padding:10px;
+                padding-right:5px;
+            }
+
+            #home-images{
+                height: calc(100vh - 100px);
+                width: 100vw;
+                background-color: darkslategray;
+                display:block;
+            }
+
+            #character-images{
+                position: absolute;
+                display:flex;
+                flex-direction:row;
+                justify-content: center;
+                align-items:flex-end;
+            }
+
+            #character-images img{
+                width:30vw;
+                display:block;
+            }
+
+            #logo{
+                position: absolute;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="home">
+                <nav>
+                    <div id="left-nav">
+                        <div class="nav-button">HOME</div>
+                        <div class="nav-button">GAMES</div>
+                    </div>
+                    <div id="right-nav">
+                        <div class="nav-button">CONTACT</div>
+                        <div class="nav-button register">REGISTER</div>
+                    </div>
+                </nav>
+
+                <div id="home-images">
+                    <div id="character-images">
+                        <img src="assets/img/left.png" id="left-img">
+                        <img src="assets/img/center.png" id="center-img">
+                        <img src="assets/img/right.png" id="right-img">
+                    </div>
+                    <div id="logo"><img src=""></div>
+                    
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
