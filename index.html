@@ -93,6 +93,12 @@
             display: block;
         }
 
+        #left-img,
+        #right-img {
+            height: 30vh;
+            width: auto;
+        }
+
         #logo {
             position: absolute;
             bottom: 100px;
@@ -102,6 +108,7 @@
         #about {
             width: 100vw;
             min-height: 50vh;
+            background-color: antiquewhite;
         }
     </style>
 </head>
@@ -122,14 +129,24 @@
 
             <div id="home-images">
                 <div id="character-images">
-                    <img src="assets/img/left.png" id="left-img">
-                    <img src="assets/img/center.png" id="center-img">
-                    <img src="assets/img/right.png" id="right-img">
+                    <div id="left-img-parent">
+                        <img src="assets/img/left.png" id="left-img">
+                    </div>
+                    <div id="center-img-parent">
+                        <img src="assets/img/center.png" id="center-img">
+                    </div>
+                    <div id="left-img-parent">
+                        <img src="assets/img/right.png" id="right-img">
+                    </div>
                 </div>
-                <div id="logo"><img src="assets/img/logo.png"></div>
+                <div id="logo">
+                    <img src="assets/img/logo.png">
+                </div>
             </div>
         </div>
-        <div id="about"></div>
+        <div id="about">
+
+        </div>
     </div>
 </body>
 
