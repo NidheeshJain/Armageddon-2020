@@ -86,23 +86,43 @@
             justify-content: center;
             align-items: flex-end;
             width: 100vw;
+            transform:translateX(-20px);
         }
 
         #character-images img {
-            width: 30vw;
             display: block;
         }
 
         #left-img,
         #right-img {
-            height: 30vh;
+            height: 50vh;
             width: auto;
+            object-fit: contain;
         }
 
+        #left-img{
+            transform:translateX(14vw);
+        }
+
+        #center-img{
+            z-index:1;
+        }
+
+        #right-img{
+            transform:translateX(-8vw);
+        }
         #logo {
             position: absolute;
-            bottom: 100px;
-            left: calc(50vw - 450px);
+            bottom: 70px;
+            width:100vw;    
+            z-index:2;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+        }
+
+        #logo img{
+            width:580px;
         }
 
         #about {
@@ -129,15 +149,9 @@
 
             <div id="home-images">
                 <div id="character-images">
-                    <div id="left-img-parent">
                         <img src="assets/img/left.png" id="left-img">
-                    </div>
-                    <div id="center-img-parent">
                         <img src="assets/img/center.png" id="center-img">
-                    </div>
-                    <div id="left-img-parent">
                         <img src="assets/img/right.png" id="right-img">
-                    </div>
                 </div>
                 <div id="logo">
                     <img src="assets/img/logo.png">
@@ -148,6 +162,7 @@
 
         </div>
     </div>
+
 </body>
 
 </html>
