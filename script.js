@@ -23,7 +23,7 @@ window.onscroll = function(e) {
     if(scrolldown <= 150) {
         cenimg.style.height = "87vh";
         cenimg.style.transform = `scale(${1- (scrolldown*0.0008133)}, ${1 - (scrolldown*0.0008133)})`;
-        //rightimg.style.transform = `translateX(0px)`;
+        //zrightimg.style.transform = `translateX(0px)`;
         //leftimg.style.transform = `translate(-0px)`;
         cenimg.style.zIndex = '1';
     }
