@@ -13,7 +13,7 @@ var home = document.querySelector('#home');
 // })
 //i = false;
 //console.log(i)
-
+let first_time=true
 window.onscroll = function(e) {
     //console.log("hi");
     hidenav()
@@ -32,13 +32,40 @@ window.onscroll = function(e) {
         arma.style.bottom = `${70 + 0.4 * scrolldown}`;
         cenimg.style.zIndex = '2';
     }
+    //first_time=false
 }
-function scroller(){
+let checker = true;
+function scroller(checker){
+    clearInterval();
     if (window.pageYOffset < 175)
     {
-        window.scrollBy(0, 200);
+        //first_time=true
+        var x = 20;
+        var y = 60;
+        var count=0
+        //console.log(first_time)
+        var myvar=setInterval(function() {
+            if(window.pageYOffset >=0&&checker) {
+            //count++
+            //console.log(window.pageYOffset)
+            //console.log(count)
+            if(window.pageYOffset<=200) {
+            //console.log('hi')
+                window.scrollBy(0, x);
+                
+            }
+            if(window.pageYOffset >=200){
+                clearInterval(myvar)
+            }
+        }
+        }, y)
+
+        
+        clearInterval();
         //console.log(window.pageYOffset);
     }
+    //function()
+    
     //console.log(window.pageYOffset);
 }
 var height_home=document.getElementById('home').getBoundingClientRect().height
