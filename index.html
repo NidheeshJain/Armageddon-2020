@@ -184,7 +184,8 @@
 
         .heading {
             font-family: Stem-Bold;
-            font-size: 2em;
+            font-size: 3.5em;
+            letter-spacing: .01vw;
             width: 80vw;
         }
         #game-cont{
@@ -199,12 +200,31 @@
             background-color: blueviolet;
             margin: 0 2vw 0 0;
         }
-        .about {
+        #about {
             flex-direction: column;
             align-items: flex-start;
+            position: relative;
             width: 80vw;
-            margin-top: 54vh;
+            background-color: black;
+            margin-top: 35vh;
+            margin-left: 5vw;
+            color: #fff;
         }
+        .punchline {
+            font-family: Stem-Bold;
+            font-size: 2em;
+        }
+        .info {
+            margin-top: 3vh;
+            font-family: Stem-Regular;
+            font-size: 2em;
+            line-height: 5vh;
+            display: flex;
+        }
+        .image {
+            width: 35vw;
+        }
+        
     </style>
 </head>
 
@@ -234,12 +254,13 @@
             </div>
         </div>
         <div id="about">
-            <div class="heading">ABOUT US</div>
+            <div class="ah heading">ABOUT US</div>
             <div class="punchline">Punchline</div>
             <div class="info">
-                <p class="about-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a erat ligula. Vivamus mattis orci eu ipsum fringilla, a ornare augue fermentum. Aliquam blandit iaculis est in aliquam. Donec ut pretium turpis. In egestas tempor euismod. Maecenas vel nisi metus. Etiam sodales nisi sed eros venenatis, vitae porttitor enim auctor. In id congue metus, quis suscipit quam. Proin ut tincidunt odio, ut egestas magna. Mauris efficitur nulla nulla, dictum malesuada odio elementum vel. Donec vestibulum tincidunt nisi. Morbi commodo ex purus, et venenatis diam tincidunt aliquet. Duis non accumsan ante. Nunc et neque non turpis feugiat ultricies. Ut nunc lacus, laoreet sit amet fermentum in, ullamcorper eget arcu.
 
-                </p>
+                <div class="about-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a erat ligula. Vivamus mattis orci eu ipsum fringilla, a ornare augue fermentum. Aliquam blandit iaculis est in aliquam. Donec ut pretium turpis. In egestas tempor euismod. Maecenas vel nisi metus. Etiam sodales nisi sed eros venenatis, vitae porttitor enim auctor. In id congue metus, quis suscipit quam. Proin ut tincidunt odio, ut egestas magna. Mauris efficitur nulla nulla, dictum malesuada odio elementum vel. Donec vestibulum tincidunt nisi. Morbi commodo ex purus, et venenatis diam tincidunt aliquet. Duis non accumsan ante. Nunc et neque non turpis feugiat ultricies. Ut nunc lacus, laoreet sit amet fermentum in, ullamcorper eget arcu.
+
+                </div>
             <div class="image">
                 
             </div>
