@@ -94,22 +94,22 @@ function hidenav(){
 let previous=4
 function img_slide(input){
     
-    
+    //console.log(input);
     var ten_vh= 10+2*document.getElementsByClassName('name')[input].getBoundingClientRect().height
+    //console.log(ten_vh)
     document.getElementsByClassName('game-img')[input].style.transform='translateY('+ten_vh+'px)'
     //console.log(document.getElementsByClassName('game-img')[input])
     setTimeout(function(){
         //console.log(input)
         //console.log(previous)
-        if(input!=previous){
             document.getElementsByClassName('game-name')[input].style.color='white'
             document.getElementsByClassName('rules-cont')[input].style.display='flex'
             document.getElementsByClassName('rules-cont')[input].style.marginTop='-10px'
-        }
+        
         previous=input
         
     },200)
-    if(!first_time){
+    /*if(!first_time){
         var i=previous
         
         //console.log(i)
@@ -118,6 +118,12 @@ function img_slide(input){
         document.getElementsByClassName('game-name')[i].style.color='transparent'
         document.getElementsByClassName('rules-cont')[i].style.display='none'
     }
-    first_time=false
+    first_time=false*/
     
+}
+function img_slide1(input) {
+    //console.log(input);
+    document.getElementsByClassName('game-img')[input].style.transform = '';
+    document.getElementsByClassName('game-name')[input].style.color = 'transparent';
+    document.getElementsByClassName('rules-cont')[input].style.display = 'none';
 }
