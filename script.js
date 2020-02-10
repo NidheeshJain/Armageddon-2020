@@ -36,7 +36,7 @@ window.onscroll = function(e) {
 }
 let checker = true;
 function scroller(checker){
-    clearInterval();
+    
     if (window.pageYOffset < 175)
     {
         //first_time=true
@@ -61,7 +61,7 @@ function scroller(checker){
         }, y)
 
         
-        clearInterval();
+        
         //console.log(window.pageYOffset);
     }
     //function()
@@ -70,7 +70,7 @@ function scroller(checker){
 }
 var height_home=document.getElementById('home').getBoundingClientRect().height
 function hidenav(){
-    console.log(window.pageYOffset)
+    //console.log(window.pageYOffset)
     
     if(50<window.pageYOffset&&window.pageYOffset<height_home){
         document.getElementById('left-nav').style.display='none'
@@ -78,7 +78,7 @@ function hidenav(){
     }
     
     else{
-        console.log('hi')
+        
         document.getElementById('left-nav').style.display='flex'
         document.getElementById('right-nav').style.display='flex'
     }

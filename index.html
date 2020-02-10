@@ -24,6 +24,8 @@
         a{
             text-decoration: none;
             color: white;
+            cursor: pointer;
+
         }
         ::-webkit-scrollbar {
             width: 0;
@@ -53,7 +55,7 @@
             align-items: center;
             top: 0;
             position: fixed;
-            
+            z-index: 1;
             overflow-x: hidden;
         }
 
@@ -77,6 +79,7 @@
         .nav-button {
             margin: 0 8vw 0 8vw;
             background-color: transparent;
+            cursor: pointer;
         }
 
         .register {
@@ -92,7 +95,7 @@
             /* background-color: darkslategray; */
             display: block;
             
-            z-index: 1;
+            /* z-index: 1; */
         }
 
         #character-images {
@@ -162,7 +165,7 @@
 
 <body>
     <div id="wrapper">
-        <div id="home" onclick="scroller(true)">
+        <div id="home" >
             <nav>
                 <div id="left-nav">
                     <div class="nav-button" ><a href="#home">HOME</a></div>
@@ -175,7 +178,7 @@
             </nav>
 
             <div id="home-images">
-                <div id="character-images">
+                <div id="character-images" onclick="scroller(true)">
                         <img src="assets/img/left.png" id="left-img">
                         <img src="assets/img/center.png" id="center-img">
                         <img src="assets/img/right.png" id="right-img">
