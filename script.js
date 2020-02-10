@@ -83,4 +83,33 @@ function hidenav(){
         document.getElementById('right-nav').style.display='flex'
     }
 }
-
+let previous=4
+function img_slide(input){
+    
+    
+    var ten_vh= 10+2*document.getElementsByClassName('name')[input].getBoundingClientRect().height
+    document.getElementsByClassName('game-img')[input].style.transform='translateY('+ten_vh+'px)'
+    //console.log(document.getElementsByClassName('game-img')[input])
+    setTimeout(function(){
+        //console.log(input)
+        //console.log(previous)
+        if(input!=previous){
+            document.getElementsByClassName('game-name')[input].style.color='white'
+            document.getElementsByClassName('rules-cont')[input].style.display='flex'
+            document.getElementsByClassName('rules-cont')[input].style.marginTop='-10px'
+        }
+        previous=input
+        
+    },200)
+    if(!first_time){
+        var i=previous
+        
+        //console.log(i)
+       
+        document.getElementsByClassName('game-img')[i].style.transform=''
+        document.getElementsByClassName('game-name')[i].style.color='transparent'
+        document.getElementsByClassName('rules-cont')[i].style.display='none'
+    }
+    first_time=false
+    
+}

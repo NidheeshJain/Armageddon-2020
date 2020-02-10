@@ -175,7 +175,7 @@
         #games-page {
             width: 100vw;
             min-height: 70vh;
-            background-color: navy;
+            background-color:black;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -192,12 +192,71 @@
             justify-content: flex-start;
             align-items: center;
             width: 80vw;
+            margin-top: 4vh;
         }
         .games{
             height: 50vh;
             width:18vw ;
-            background-color: blueviolet;
+            background-color:transparent;
             margin: 0 2vw 0 0;
+            
+        }
+        .game-img-rules{
+            display: flex;
+            flex-direction: column;
+            width: 18vw;
+            height: 50vh;
+            margin-top: -10vh;
+        }
+        .game-name{
+            height: 10vh;
+            font-family: Stem-Regular;
+            width: 18vw;
+            z-index: -1;
+            display: flex;
+            color: transparent;
+            flex-direction: column;
+        }
+        .name{
+            width: 18vw;
+            font-size: 2.5vh;
+            font-weight: bold;
+        }
+        .team{
+            width: 18vw;
+            font-size: 2vh;
+            margin-top: 0.2vh;
+        }
+        .game-img{
+            height: 40vh;
+            width: 18vw;
+            z-index: 1;
+            transition: all 0.2s ease ;
+            background-color:rgb(8, 32, 32) ;
+        }
+        .rules-cont{
+            display: none;
+            height: auto;
+            padding: 0.5vh;
+            width: 18vw;
+            z-index: 2;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 1.5vh;
+            font-weight: bold;
+            font-family: Stem-Regular;
+            
+        }
+        .rules{
+            height: 7vh;
+            width: 10vw;
+            border: white 3px solid;
+            opacity: 0.75;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.1em;
         }
     </style>
 </head>
@@ -235,17 +294,86 @@
                 GAMES
             </div>
             <div id="game-cont">
+                
                 <div class="games">
-
+                    <div class="game-name">
+                        <div class="name">
+                            Counter Strike : GO
+                        </div>
+                        <div class="team">
+                            Team of 5
+                        </div>
+                    </div>
+                    <div class="game-img-rules">
+                        <div class="game-img" onclick="img_slide(0)">
+                            <img src="" >
+                        </div>
+                        <div class="rules-cont">
+                            <div class="rules">
+                                SEE RULES
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="games">
-
+                    <div class="game-name">
+                        <div class="name">
+                            PUB-G Mobile
+                        </div>
+                        <div class="team">
+                            Team of 4
+                        </div>
+                    </div>
+                    <div class="game-img-rules">
+                        <div class="game-img" onclick="img_slide(1)">
+                            <img src="" >
+                        </div>
+                        <div class="rules-cont">
+                            <div class="rules">
+                                SEE RULES
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="games">
-
+                    <div class="game-name">
+                        <div class="name">
+                            Rainbow Six Seige
+                        </div>
+                        <div class="team">
+                            Team of 2
+                        </div>
+                    </div>
+                    <div class="game-img-rules">
+                        <div class="game-img" onclick="img_slide(2)">
+                            <img src="" >
+                        </div>
+                        <div class="rules-cont">
+                            <div class="rules">
+                                SEE RULES
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="games">
-
+                    <div class="game-name">
+                        <div class="name">
+                            Fifa 19
+                        </div>
+                        <div class="team">
+                            Team of 5
+                        </div>
+                    </div>
+                    <div class="game-img-rules">
+                        <div class="game-img" onclick="img_slide(3)">
+                            <img src="" >
+                        </div>
+                        <div class="rules-cont">
+                            <div class="rules">
+                                SEE RULES
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
