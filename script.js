@@ -105,7 +105,7 @@ function img_slide(input){
             document.getElementsByClassName('game-name')[input].style.color='white'
             document.getElementsByClassName('rules-cont')[input].style.display='flex'
             document.getElementsByClassName('rules-cont')[input].style.marginTop='-10px'
-        
+            console.log('hi')
         previous=input
         
     },200)
@@ -126,4 +126,5 @@ function img_slide1(input) {
     document.getElementsByClassName('game-img')[input].style.transform = '';
     document.getElementsByClassName('game-name')[input].style.color = 'transparent';
     document.getElementsByClassName('rules-cont')[input].style.display = 'none';
+    console.log('bye');
 }
