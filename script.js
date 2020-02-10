@@ -16,6 +16,7 @@ var home = document.querySelector('#home');
 
 window.onscroll = function(e) {
     //console.log("hi");
+    hidenav()
     //console.log(window.pageYOffset);
     let scrolldown = window.pageYOffset;
     //console.log(scrolldown)
@@ -29,7 +30,7 @@ window.onscroll = function(e) {
         rightimg.style.transform = `translate(${(3.5/200 * scrolldown) - 8.0}vw)`;
         leftimg.style.transform = `translate(${(-3.5/200 * scrolldown) + 13.0}vw)`;
         arma.style.bottom = `${70 + 0.4 * scrolldown}`;
-        cenimg.style.zIndex = '1';
+        cenimg.style.zIndex = '2';
     }
 }
 function scroller(){
@@ -39,5 +40,20 @@ function scroller(){
         //console.log(window.pageYOffset);
     }
     //console.log(window.pageYOffset);
+}
+var height_home=document.getElementById('home').getBoundingClientRect().height
+function hidenav(){
+    console.log(window.pageYOffset)
+    
+    if(50<window.pageYOffset&&window.pageYOffset<height_home){
+        document.getElementById('left-nav').style.display='none'
+        document.getElementById('right-nav').style.display='none'
+    }
+    
+    else{
+        console.log('hi')
+        document.getElementById('left-nav').style.display='flex'
+        document.getElementById('right-nav').style.display='flex'
+    }
 }
 
