@@ -68,11 +68,15 @@ function scroller(checker){
     
     //console.log(window.pageYOffset);
 }
-var height_home=document.getElementById('home').getBoundingClientRect().height
+var nav_height= (document.getElementById('right-nav').getBoundingClientRect().height/2)-20
+
+var height_home=document.getElementById('home').getBoundingClientRect().height+2*document.getElementsByClassName('info')[0].getBoundingClientRect().height
 function hidenav(){
+    var info=document.getElementsByClassName('info')[0].getBoundingClientRect()
     //console.log(window.pageYOffset)
-    
-    if(50<window.pageYOffset&&window.pageYOffset<height_home){
+    var num=info.y+info.height-nav_height
+    //console.log(info.y+info.height-nav_height)
+    if(50<window.pageYOffset&&num>0){
         document.getElementById('left-nav').style.display='none'
         document.getElementById('right-nav').style.display='none'
         document.getElementById('navbar').style.backgroundColor = 'transparent';
@@ -83,8 +87,37 @@ function hidenav(){
         
         document.getElementById('left-nav').style.display='flex'
         document.getElementById('right-nav').style.display='flex'
-        document.getElementById('navbar').style.backgroundColor = 'black';
+        document.getElementById('navbar').style.backgroundColor = '';
         document.getElementById('navbar').style.transition = '0.5s ease-in'
     }
 }
-
+let previous=4
+function img_slide(input){
+    
+    
+    var ten_vh= 10+2*document.getElementsByClassName('name')[input].getBoundingClientRect().height
+    document.getElementsByClassName('game-img')[input].style.transform='translateY('+ten_vh+'px)'
+    //console.log(document.getElementsByClassName('game-img')[input])
+    setTimeout(function(){
+        //console.log(input)
+        //console.log(previous)
+        if(input!=previous){
+            document.getElementsByClassName('game-name')[input].style.color='white'
+            document.getElementsByClassName('rules-cont')[input].style.display='flex'
+            document.getElementsByClassName('rules-cont')[input].style.marginTop='-10px'
+        }
+        previous=input
+        
+    },200)
+    if(!first_time){
+        var i=previous
+        
+        //console.log(i)
+       
+        document.getElementsByClassName('game-img')[i].style.transform=''
+        document.getElementsByClassName('game-name')[i].style.color='transparent'
+        document.getElementsByClassName('rules-cont')[i].style.display='none'
+    }
+    first_time=false
+    
+}
