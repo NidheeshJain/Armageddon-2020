@@ -68,11 +68,15 @@ function scroller(checker){
     
     //console.log(window.pageYOffset);
 }
-var height_home=document.getElementById('home').getBoundingClientRect().height
+var nav_height= (document.getElementById('right-nav').getBoundingClientRect().height/2)-20
+
+var height_home=document.getElementById('home').getBoundingClientRect().height+2*document.getElementsByClassName('info')[0].getBoundingClientRect().height
 function hidenav(){
+    var info=document.getElementsByClassName('info')[0].getBoundingClientRect()
     //console.log(window.pageYOffset)
-    
-    if(50<window.pageYOffset&&window.pageYOffset<height_home){
+    var num=info.y+info.height-nav_height
+    //console.log(info.y+info.height-nav_height)
+    if(50<window.pageYOffset&&num>0){
         document.getElementById('left-nav').style.display='none'
         document.getElementById('right-nav').style.display='none'
         document.getElementById('navbar').style.backgroundColor = 'transparent';
@@ -83,7 +87,7 @@ function hidenav(){
         
         document.getElementById('left-nav').style.display='flex'
         document.getElementById('right-nav').style.display='flex'
-        document.getElementById('navbar').style.backgroundColor = 'black';
+        document.getElementById('navbar').style.backgroundColor = '';
         document.getElementById('navbar').style.transition = '0.5s ease-in'
     }
 }
