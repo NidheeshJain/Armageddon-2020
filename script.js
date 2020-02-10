@@ -75,12 +75,16 @@ function hidenav(){
     if(50<window.pageYOffset&&window.pageYOffset<height_home){
         document.getElementById('left-nav').style.display='none'
         document.getElementById('right-nav').style.display='none'
+        document.getElementById('navbar').style.backgroundColor = 'transparent';
+        document.getElementById('navbar').style.transition = '0s'
     }
     
     else{
         
         document.getElementById('left-nav').style.display='flex'
         document.getElementById('right-nav').style.display='flex'
+        document.getElementById('navbar').style.backgroundColor = 'black';
+        document.getElementById('navbar').style.transition = '0.5s ease-in'
     }
 }
 let previous=4
