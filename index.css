@@ -166,7 +166,12 @@ nav {
 
 
 
-
+.controller {
+    width: 25vw;
+    height: 120%;
+    margin-left: 5vw;
+    margin-top: -3vh;
+}
 
 
 
