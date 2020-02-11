@@ -1,3 +1,4 @@
+console.log(document.qu)
 var home = document.querySelector('#home');
 //let vh = window.innerHeight/100;
 //let vw = window.innerWidth/100;
@@ -99,16 +100,16 @@ function img_slide(input){
     //console.log(ten_vh)
     document.getElementsByClassName('game-img')[input].style.transform='translateY('+ten_vh+'px)'
     //console.log(document.getElementsByClassName('game-img')[input])
-    setTimeout(function(){
+    
         //console.log(input)
         //console.log(previous)
             document.getElementsByClassName('game-name')[input].style.color='white'
             document.getElementsByClassName('rules-cont')[input].style.display='flex'
             document.getElementsByClassName('rules-cont')[input].style.marginTop='-10px'
-            console.log('hi')
+            //document.querySelectorAll('.game-img')[input].style.transitionDelay = '.4s'
+            document.querySelectorAll('.rules')[input].style.transitionDelay = '.1s'
         previous=input
         
-    },200)
     /*if(!first_time){
         var i=previous
         
@@ -126,5 +127,4 @@ function img_slide1(input) {
     document.getElementsByClassName('game-img')[input].style.transform = '';
     document.getElementsByClassName('game-name')[input].style.color = 'transparent';
     document.getElementsByClassName('rules-cont')[input].style.display = 'none';
-    console.log('bye');
 }
