@@ -30,7 +30,6 @@ a {
     text-decoration: none;
     color: white;
     cursor: pointer;
-
 }
 
 ::-webkit-scrollbar {
@@ -94,6 +93,12 @@ nav {
     background-color: transparent;
     cursor: pointer;
 }
+
+.nav-button:hover{
+    color:#ff00ff;
+}
+
+
 
 .register {
     border: 2px solid #ff00ff;
@@ -240,6 +245,7 @@ nav {
     width:18vw ;
     background-color:transparent;
     margin: 0 2vw 0 0;
+    cursor:pointer;
     
 }
 .game-img-rules{
