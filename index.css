@@ -57,7 +57,7 @@ a {
 }
 
 nav {
-   /* background-color: #000; */
+   background-color: black;
     height: 100px;
     width: 100vw;
     display: flex;
@@ -73,7 +73,7 @@ nav {
 #right-nav {
     /* width: 35vw; */
     height: 100%;
-    /* background-color: azure; */
+    background-color: black;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -81,7 +81,7 @@ nav {
     font-family: Azonix;
     color: white;
     letter-spacing: 5px;
-
+    z-index:1;
 }
 
 #right-nav {
@@ -113,7 +113,7 @@ nav {
     /* background-color: darkslategray; */
     display: block;
 
-    /* z-index: 1; */
+    z-index: 2;
 }
 
 #character-images {
@@ -145,7 +145,7 @@ nav {
 }
 
 #center-img {
-    z-index: 2;
+    z-index: 3;
     height: 87vh;
     object-fit: contain;
     transform-origin: bottom center;
