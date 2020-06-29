@@ -69,8 +69,12 @@ nav {
     overflow-x: hidden;
 }
 
+#ham {
+    display: none;
+}
 #left-nav,
-#right-nav {
+#right-nav,
+#about-us-nav {
     /* width: 35vw; */
     height: 100%;
     background-color: black;
@@ -82,6 +86,10 @@ nav {
     color: white;
     letter-spacing: 5px;
     z-index:1;
+}
+
+#about-us-nav {
+    display: none;
 }
 
 #right-nav {
@@ -310,5 +318,49 @@ nav {
 @media all and (max-width : 500px) {
     #about-cont {
         display: none;
+        position: absolute;
+        top: 3vh;
+    }
+    #about {
+        width: 90vw;
+    }
+    .image-about {
+        display: none;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        position: absolute;
+        height: 40vh;
+        width: 45vw;
+        right: 0;
+    }
+    #left-nav, #right-nav, #about-us-nav {
+        position: relative;
+        flex-direction: column;
+        align-content: space-between;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 2.5px;
+        margin-top: 2.5vh;
+    }
+    #ham {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-top: 2vh;
+        margin-right: 5vw;
+        z-index: 10;
+    }
+    #about-us-nav {
+        display: block;
+        margin-right: -4vw;
+    }
+    .nav-button {
+        margin: 1vh 10vw 1vh 0;
     }
 }

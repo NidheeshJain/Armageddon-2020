@@ -36,6 +36,28 @@ window.onscroll = function(e) {
     //first_time=false
 }
 let checker = true;
+
+function sidebarOpen() {
+    document.getElementById('navbar').style.display = "flex";
+}
+
+function sidebarClose() {
+    document.getElementById('navbar').style.display = "none"
+}
+
+function openAbout() {
+    console.log(document.getElementById('about-cont'))
+    document.getElementById('about-cont').style.display = "flex"
+    document.getElementById('home-images').style.display="none"
+    document.getElementById('games-page').style.display="none"
+}
+function closeAbout(href) {
+    document.getElementById('about-cont').style.display = "none"
+    document.getElementById('home-images').style.display="block"
+    document.getElementById('games-page').style.display="flex"
+    window.location.href = href
+}
+
 function scroller(checker){
     
     if (window.pageYOffset < 175)
@@ -73,6 +95,8 @@ var nav_height= (document.getElementById('right-nav').getBoundingClientRect().he
 
 var height_home=document.getElementById('home').getBoundingClientRect().height+2*document.getElementsByClassName('info')[0].getBoundingClientRect().height
 function hidenav(){
+    if(window.innerWidth<500)
+        return;
     var info=document.getElementsByClassName('info')[0].getBoundingClientRect()
     //console.log(window.pageYOffset)
     var num=info.y+info.height-nav_height
