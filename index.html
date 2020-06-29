@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        
+
     </style>
 </head>
 
@@ -17,7 +17,7 @@
             <div id="ham">
                 <a id="ham-open" onclick="sidebarOpen()"><img src="assets/ui/open-menu.png" id="ham-icon"></a>
             </div>
-            <nav id = "navbar">
+            <nav id="navbar">
                 <div id="ham">
                     <a id="ham-close" onclick="sidebarClose()"><img src="assets/ui/cancel.png" id="ham-icon"></a>
                 </div>
@@ -25,13 +25,12 @@
                     <div class="nav-button" onclick="closeAbout('#home')">HOME</div>
                     <div class="nav-button" onclick="closeAbout('#games-page')">GAMES</div>
                 </div>
-                <div id="about-us-nav"><a class = "nav-button" onclick="openAbout()">ABOUT US</a></div>
+                <div id="about-us-nav"><a class="nav-button" onclick="openAbout()">ABOUT US</a></div>
                 <div id="right-nav">
                     <div class="nav-button">CONTACT</div>
                     <div class="nav-button register">REGISTER</div>
                 </div>
             </nav>
-
             <div id="home-images">
                 <div id="character-images" onclick="scroller(true)">
                     <img src="assets/img/left.png" id="left-img">
@@ -48,24 +47,31 @@
                 <div class="ah heading">ABOUT US</div>
                 <div class="punchline">Punchline</div>
                 <div class="info">
-    
-                    <div class="about-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a erat ligula. Vivamus mattis orci eu ipsum fringilla, a ornare augue fermentum. Aliquam blandit iaculis est in aliquam. Donec ut pretium turpis. In egestas tempor euismod. Maecenas vel nisi metus. Etiam sodales nisi sed eros venenatis, vitae porttitor enim auctor. In id congue metus, quis suscipit quam. Proin ut tincidunt odio, ut egestas magna. Mauris efficitur nulla nulla, dictum malesuada odio elementum vel. Donec vestibulum tincidunt nisi. Morbi commodo ex purus, et venenatis diam tincidunt aliquet. Duis non accumsan ante. Nunc et neque non turpis feugiat ultricies. Ut nunc lacus, laoreet sit amet fermentum in, ullamcorper eget arcu.
-    
+
+                    <div class="about-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a erat
+                        ligula. Vivamus mattis orci eu ipsum fringilla, a ornare augue fermentum. Aliquam blandit
+                        iaculis est in aliquam. Donec ut pretium turpis. In egestas tempor euismod. Maecenas vel nisi
+                        metus. Etiam sodales nisi sed eros venenatis, vitae porttitor enim auctor. In id congue metus,
+                        quis suscipit quam. Proin ut tincidunt odio, ut egestas magna. Mauris efficitur nulla nulla,
+                        dictum malesuada odio elementum vel. Donec vestibulum tincidunt nisi. Morbi commodo ex purus, et
+                        venenatis diam tincidunt aliquet. Duis non accumsan ante. Nunc et neque non turpis feugiat
+                        ultricies. Ut nunc lacus, laoreet sit amet fermentum in, ullamcorper eget arcu.
+
                     </div>
                     <div class="image-about">
-                    <img class="controller" src="assets/img/Controller.png">
+                        <img class="controller" src="assets/img/Controller.png">
                     </div>
                 </div>
             </div>
 
         </div>
-        
+
         <div id="games-page">
             <div class='heading'>
                 GAMES
             </div>
             <div id="game-cont">
-                
+
                 <div class="games" onmouseover="img_slide(0)" onmouseout="img_slide1(0)">
                     <div class="game-name">
                         <div class="name">
@@ -76,8 +82,8 @@
                         </div>
                     </div>
                     <div class="game-img-rules">
-                        <div class="game-img" >
-                            <img src="" >
+                        <div class="game-img">
+                            <img src="">
                         </div>
                         <div class="rules-cont">
                             <div class="rules">
@@ -97,7 +103,7 @@
                     </div>
                     <div class="game-img-rules" onmouseover="img_slide(1)" onmouseout="img_slide1(1)">
                         <div class="game-img">
-                            <img src="" >
+                            <img src="">
                         </div>
                         <div class="rules-cont">
                             <div class="rules">
@@ -117,7 +123,7 @@
                     </div>
                     <div class="game-img-rules" onmouseover="img_slide(2)" onmouseout="img_slide1(2)">
                         <div class="game-img">
-                            <img src="" >
+                            <img src="">
                         </div>
                         <div class="rules-cont">
                             <div class="rules">
@@ -136,8 +142,8 @@
                         </div>
                     </div>
                     <div class="game-img-rules">
-                        <div class="game-img" onmouseover="img_slide(3)" onmouseout="img_slide1(3)" >
-                            <img src="" >
+                        <div class="game-img" onmouseover="img_slide(3)" onmouseout="img_slide1(3)">
+                            <img src="">
                         </div>
                         <div class="rules-cont">
                             <div class="rules">
@@ -147,6 +153,72 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="form-cont">
+            <div id="form-heading">REGISTER</div>
+            <form class="form">
+                <ul class="flex-outer">
+                    <ul class="flex-inner">
+                        <li class="input-1">
+                            <input type="text" class="myInput" placeholder="input">
+                        </li>
+                        <li class="input-2">
+                           <select class="myInput" name="input">
+                            <option value="0">SELECT GAME:</option>
+                            <option value="1">GAME-1</option>
+                            <option value="2">GAME-2</option>
+                            <option value="3">GAME-3</option>
+                            <option value="4">GAME-4</option>
+                           </select>
+                        </li>
+                    </ul>
+                    <ul class="flex-inner">
+                        <li class="input-1">
+                            <input type="text" class="myInput" placeholder="input">
+                        </li>
+                        <li class="input-2">
+                            <input type="text" class="myInput" placeholder="input">
+                        </li>
+                    </ul>
+                    <ul class="flex-inner">
+                        <li class="input-1">
+                            <input type="text" class="myInput" placeholder="input">
+                        </li>
+                        <li class="input-2">
+                            <input type="text" class="myInput" placeholder="input">
+                        </li>
+                    </ul><ul class="flex-inner">
+                        <li class="input-1">
+                            <input type="text" class="myInput" placeholder="input">
+                        </li>
+                        <li class="input-2">
+                            <input type="text" class="myInput" placeholder="input">
+                        </li>
+                    </ul><ul class="flex-inner">
+                        <li class="input-1">
+                            <input type="text" class="myInput" placeholder="input">
+                        </li>
+                        <li class="input-2">
+                            <input type="text" class="myInput" placeholder="input">
+                        </li>
+                    </ul><ul class="flex-inner">
+                        <li class="input-1">
+                            <input type="text" class="myInput" placeholder="input">
+                        </li>
+                        <li class="input-2">
+                            <input type="text" class="myInput" placeholder="input">
+                        </li>
+                    </ul><ul class="flex-inner">
+                        <li class="input-1">
+                            <input type="text" class="myInput" placeholder="input">
+                        </li>
+                        <li class="input-2">
+                            <input type="text" class="myInput" placeholder="input">
+                        </li>
+                    </ul>
+                </ul>
+                <button type="submit" id="submit-button">SUBMIT</button>
+            </form>
         </div>
     </div>
     <script src="script.js"></script>

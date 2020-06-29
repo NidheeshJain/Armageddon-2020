@@ -1,4 +1,4 @@
-console.log(document.qu)
+console.log(window.innerHeight, window.innerWidth)
 var home = document.querySelector('#home');
 //let vh = window.innerHeight/100;
 //let vw = window.innerWidth/100;

@@ -314,6 +314,66 @@ nav {
     font-size: 1.1em;
 }
 
+.form-cont {
+    width: 100vw;
+    margin-bottom: 8vh;
+}
+
+#form-heading {
+    color: white;
+    font-family: Azonix;
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 8px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ul {
+    list-style-type: none;
+}
+
+.flex-outer {
+    display: flex;
+    flex-direction: column;
+}
+.flex-outer > ul {
+    margin-top: 10vh;
+}
+.flex-inner {
+    display: flex;
+}
+.input-1 {
+    margin-right: 20vw;
+}
+.input-2 {
+    margin-left: 20vw;
+}
+.myInput {
+    height: 4vh;
+    width: 20vw;
+    border: 1.75px solid #00B9FF;
+    background-color: black;
+    box-sizing: border-box;
+    color: white;
+    font-family: Azonix;
+}
+
+.myInput::placeholder {
+    padding: 8px;
+    font-family: Azonix;
+    color: #bbbbbb;
+    letter-spacing: 2px;
+}
+
+#submit-button {
+    height: 5vh;
+    width: 10vh;
+    margin-top: 3vh;
+}
 
 @media all and (max-width : 500px) {
     #about-cont {
@@ -369,5 +429,28 @@ nav {
     #logo {
         position: absolute;
         top: -60vh;
+    }
+    .flex-inner {
+        flex-direction: column;
+        align-items: center;
+    }
+    .input-1 {
+        margin-left: 0;
+    }
+    .input-2 {
+        margin-right: 40vw;
+        margin-top: 2vh;
+    }
+    .form {
+        margin-left: 20vw;
+    }
+    #submit-button {
+        margin-left: -20vw;
+    }
+    .flex-outer > ul {
+        margin-top: 6vh;
+    }
+    .myInput {
+        width: 50vw;
     }
 }
