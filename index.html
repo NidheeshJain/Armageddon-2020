@@ -176,10 +176,10 @@
                 <ul class="flex-outer">
                     <ul class="flex-inner">
                         <li class="input-1">
-                            <input type="text" class="myInput squad-name" placeholder="squad name">
+                            <input type="text" name="squadName" class="myInput squad-name" placeholder="squad name">
                         </li>
                         <li class="input-2">
-                           <select class="myInput" name="selct-game">
+                           <select class="myInput" name="selectGame">
                             <option value="0">GAME</option>
                             <option value="1">GAME-1</option>
                             <option value="2">GAME-2</option>
@@ -189,7 +189,7 @@
                         </li>
                     </ul>
                     <li class="input-3">
-                        <select class="myInput" name="no-of-persons" oninput="inputRenderer(event.target.value)">
+                        <select class="myInput" name="noOfPersons" oninput="inputRenderer(event, event.target.value)">
                             <option value="0">NO. OF PLAYERS</option>
                             <option value="1">1</option>
                             <option value="2">2</option>

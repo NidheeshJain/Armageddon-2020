@@ -15,10 +15,18 @@ var home = document.querySelector('#home');
 //i = false;
 //console.log(i)
 let first_time=true
-function inputRenderer(value) {
+const finalObj = {
+    team_name: null,
+    game_id: null,
+    team_members: []
+}
+function inputRenderer(event, value) {
+    event.preventDefault()
+    let form = document.querySelector('.form')
+    finalObj.team_name = form.elements.squadName.value
+    finalObj.game_id = form.elements.selectGame.value
     let flexOuter= document.querySelector('.flex-outer')
     let prevInputs = [...document.getElementsByClassName('member-name-username'), ...document.getElementsByClassName('member-phone-email')]
-    console.log(prevInputs)
     if(prevInputs) {
         prevInputs.map(input => {
             //console.log(input)
@@ -232,7 +240,22 @@ function img_slide1(input) {
 function submitForm(event) {
     event.preventDefault()
     const form = document.querySelector('.form')
-    let formData = new FormData(form)
+    const names = document.getElementsByClassName('member-name'
+    )
+    const usernames = document.getElementsByClassName('member-username')
+    const phones = document.getElementsByClassName('member-phone')
+    const emails = document.getElementsByClassName('member-email')
+    for(let i=0; i<names.length; ++i) {
+        console.log(names[i].value, emails[i].value, phones[i].value, usernames[i].value)
+       finalObj.team_members.push({
+           name : names[i].value,
+           email_id: emails[i].value,
+           college: "",
+           whatsapp_no: phones[i].value,
+           username: usernames[i].value
+       })
+    }
     //console.log(form.elements[0].value)
     //console.log(form)
+    console.log(finalObj)
 }
