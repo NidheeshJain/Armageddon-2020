@@ -38,7 +38,7 @@ function inputRenderer(event, value) {
         <li class="input-1">
             <input type="text" class="myInput member-name " placeholder="name member ${i}">
         </li>
-        <li class="input-2">
+        <li class="input-3">
             <input type="text" class="myInput member-username" placeholder="username ${i}">
         </li>
     </ul>`
@@ -48,7 +48,7 @@ function inputRenderer(event, value) {
         <li class="input-1">
             <input type="number" class="myInput member-phone " placeholder="phone no ${i}">
         </li>
-        <li class="input-2">
+        <li class="input-3">
             <input type="email" class="myInput member-email" placeholder="email member ${i}">
         </li>
     </ul>`

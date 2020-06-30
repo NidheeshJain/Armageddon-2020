@@ -382,9 +382,12 @@ ul {
     position: absolute;
     left: 10vw;
 }
-.input-2 {
+.input-2:first-child {
     position: absolute;
     left: 40vw;
+}
+.input-2:not(:first) {
+    left: 70vw;
 }
 .input-3 {
     position: absolute;
