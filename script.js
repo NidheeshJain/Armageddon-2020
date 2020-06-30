@@ -31,14 +31,14 @@ function inputRenderer(value) {
             <input type="text" class="myInput member-name " placeholder="name member ${i}">
         </li>
         <li class="input-2">
-            <input type="text" class="myInput member-username" placeholder="username member ${i}">
+            <input type="text" class="myInput member-username" placeholder="username ${i}">
         </li>
     </ul>`
     }
     for(let i=1; i<=value; ++i) {
         flexOuter.innerHTML+=`<ul class="flex-inner member-phone-email">
         <li class="input-1">
-            <input type="number" class="myInput member-phone " placeholder="phone no of member ${i}">
+            <input type="number" class="myInput member-phone " placeholder="phone no ${i}">
         </li>
         <li class="input-2">
             <input type="email" class="myInput member-email" placeholder="email member ${i}">
@@ -101,17 +101,21 @@ function openAbout() {
         behavior: "smooth"
     })
     //console.log(document.getElementById('about-cont'))
+    document.querySelector('.contact-cont').style.display="none"
     document.getElementById('about-cont').style.display = "flex"
     document.getElementById('home-images').style.display="none"
     document.getElementById('games-page').style.display="none"
     document.querySelector('.form-cont').style.display='none'
 }
 function closeAbout(href) {
+    window.location.href = href
+    if(window.innerWidth>=500)
+        return
     document.getElementById('about-cont').style.display = "none"
     document.getElementById('home-images').style.display="block"
     document.getElementById('games-page').style.display="flex"
+    document.querySelector('.contact-cont').style.display="block"
     document.querySelector('.form-cont').style.display="none"
-    window.location.href = href
 }
 
 function openRegister() {
@@ -126,6 +130,7 @@ function openRegister() {
     document.getElementById('about-cont').style.display = "none"
     document.getElementById('home-images').style.display="none"
     document.getElementById('games-page').style.display="none"
+    document.querySelector('.contact-cont').style.display="none"
 
 }
 
