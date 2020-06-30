@@ -442,6 +442,7 @@ ul {
     }
     #logo img {
         width: 95vw;
+        transform: translateY(55vh);
     }
     #left-img, #right-img {
         display: none;
@@ -450,6 +451,7 @@ ul {
         width: 100vw;
         text-align: center;
         margin-left:10.5vw;
+        transform: translateY(-15vh);
     }
     #logo {
         position: absolute;
