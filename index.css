@@ -92,6 +92,10 @@ nav {
     z-index: 1;
 }
 
+#left-nav{
+    margin-left:-5.5vw;
+}
+
 #about-us-nav {
     display: none;
 }
@@ -373,7 +377,6 @@ ul {
 
 .myInput {
     padding: 8px;
-    height: 4vh;
     width: 20vw;
     border: 1.75px solid #00B9FF;
     background-color: black;
