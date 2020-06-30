@@ -15,10 +15,18 @@ var home = document.querySelector('#home');
 //i = false;
 //console.log(i)
 let first_time=true
-function inputRenderer(value) {
+const finalObj = {
+    team_name: null,
+    game_id: null,
+    team_members: []
+}
+function inputRenderer(event, value) {
+    event.preventDefault()
+    let form = document.querySelector('.form')
+    finalObj.team_name = form.elements.squadName.value
+    finalObj.game_id = form.elements.selectGame.value
     let flexOuter= document.querySelector('.flex-outer')
     let prevInputs = [...document.getElementsByClassName('member-name-username'), ...document.getElementsByClassName('member-phone-email')]
-    console.log(prevInputs)
     if(prevInputs) {
         prevInputs.map(input => {
             //console.log(input)
@@ -31,14 +39,14 @@ function inputRenderer(value) {
             <input type="text" class="myInput member-name " placeholder="name member ${i}">
         </li>
         <li class="input-2">
-            <input type="text" class="myInput member-username" placeholder="username member ${i}">
+            <input type="text" class="myInput member-username" placeholder="username ${i}">
         </li>
     </ul>`
     }
     for(let i=1; i<=value; ++i) {
         flexOuter.innerHTML+=`<ul class="flex-inner member-phone-email">
         <li class="input-1">
-            <input type="number" class="myInput member-phone " placeholder="phone no of member ${i}">
+            <input type="number" class="myInput member-phone " placeholder="phone no ${i}">
         </li>
         <li class="input-2">
             <input type="email" class="myInput member-email" placeholder="email member ${i}">
@@ -101,17 +109,21 @@ function openAbout() {
         behavior: "smooth"
     })
     //console.log(document.getElementById('about-cont'))
+    document.querySelector('.contact-cont').style.display="none"
     document.getElementById('about-cont').style.display = "flex"
     document.getElementById('home-images').style.display="none"
     document.getElementById('games-page').style.display="none"
     document.querySelector('.form-cont').style.display='none'
 }
 function closeAbout(href) {
+    window.location.href = href
+    if(window.innerWidth>=500)
+        return
     document.getElementById('about-cont').style.display = "none"
     document.getElementById('home-images').style.display="block"
     document.getElementById('games-page').style.display="flex"
+    document.querySelector('.contact-cont').style.display="block"
     document.querySelector('.form-cont').style.display="none"
-    window.location.href = href
 }
 
 function openRegister() {
@@ -126,6 +138,7 @@ function openRegister() {
     document.getElementById('about-cont').style.display = "none"
     document.getElementById('home-images').style.display="none"
     document.getElementById('games-page').style.display="none"
+    document.querySelector('.contact-cont').style.display="none"
 
 }
 
@@ -227,7 +240,22 @@ function img_slide1(input) {
 function submitForm(event) {
     event.preventDefault()
     const form = document.querySelector('.form')
-    let formData = new FormData(form)
+    const names = document.getElementsByClassName('member-name'
+    )
+    const usernames = document.getElementsByClassName('member-username')
+    const phones = document.getElementsByClassName('member-phone')
+    const emails = document.getElementsByClassName('member-email')
+    for(let i=0; i<names.length; ++i) {
+        console.log(names[i].value, emails[i].value, phones[i].value, usernames[i].value)
+       finalObj.team_members.push({
+           name : names[i].value,
+           email_id: emails[i].value,
+           college: "",
+           whatsapp_no: phones[i].value,
+           username: usernames[i].value
+       })
+    }
     //console.log(form.elements[0].value)
     //console.log(form)
+    console.log(finalObj)
 }
