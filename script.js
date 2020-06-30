@@ -15,7 +15,7 @@ var home = document.querySelector('#home');
 //i = false;
 //console.log(i)
 let first_time=true
-const finalObj = {
+let finalObj = {
     team_name: null,
     game_id: null,
     team_members: []
@@ -240,7 +240,7 @@ function img_slide1(input) {
 
 function submitForm(event) {
     event.preventDefault()
-    const form = document.querySelector('.form')
+    let form = document.querySelector('.form')
     const squadName = document.querySelector('.squad-name')
     const gameId = document.querySelector('.selectGame')
     finalObj.team_name = squadName.value
@@ -255,13 +255,14 @@ function submitForm(event) {
        finalObj.team_members.push({
            name : names[i].value,
            email_id: emails[i].value,
-           college: "",
+           college: "insert_any_top10_nirf_college",
            whatsapp_no: phones[i].value,
            username: usernames[i].value
        })
     }
     //console.log(form.elements[0].value)
     //console.log(form)
+    console.log(JSON.stringify(finalObj))
 
     document.getElementById('form-status').style.display = "flex"
     document.getElementById('status-img').innerHTML = `
@@ -270,7 +271,7 @@ function submitForm(event) {
     document.getElementById('status-msg').innerHTML = `
         Sending...
     `
-    fetch('http://bits-apogee.org/arma/register_team', {
+    fetch('https://www.bits-apogee.org/arma/register_team', {
         method : 'POST',
         headers : {
             'Content-Type' : 'application/json'
@@ -289,7 +290,7 @@ function submitForm(event) {
         game_id: null,
         team_members: []
     }
-    form.elements.map(element => element.value = '')
+    //form.elements.map(element => element.value = '')
     })
     .catch(error => {
         console.log(error)
