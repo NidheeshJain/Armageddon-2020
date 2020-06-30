@@ -338,6 +338,22 @@ nav {
     letter-spacing: 8px;
 }
 
+#form-status {
+    display: none;
+    margin-top: 2.5vh;
+    margin-left: 20vw;
+    border: 2px dashed #00B9FF;
+    width: 60vw;
+    padding : 10px;
+}
+
+#status-msg {
+    color: white;
+    font-family: Azonix;
+    margin-top: 6px;
+    margin-left: 15vw;
+}
+
 .form {
     display: flex;
     flex-direction: column;
@@ -362,21 +378,21 @@ ul {
 .flex-inner {
     display: flex;
 }
-
 .input-1 {
-    margin-right: 20vw;
+    position: absolute;
+    left: 10vw;
 }
-
 .input-2 {
-    margin-left: 20vw;
+    position: absolute;
+    left: 40vw;
 }
 .input-3 {
-    margin-left: 30vw;
-    margin-top: 5vh;
+    position: absolute;
+    left: 70vw;
 }
 
 .myInput {
-    padding: 8px;
+    padding: 12px;
     width: 20vw;
     border: 1.75px solid #00B9FF;
     background-color: black;
@@ -391,10 +407,28 @@ ul {
     color: #bbbbbb;
     letter-spacing: 2px;
 }
+select {
+    letter-spacing: 3px;
+    padding: 12px;
+}
 #submit-button {
     height: 5vh;
-    width: 10vh;
-    margin-top: 3vh;
+    width: 20vh;
+    margin-top: 10vh;
+    background-color: #00B9FF;
+    color: black;
+    font-family: Azonix;
+    font-size: 20px;
+    border: none;
+}
+#submit-button:hover {
+    color: #cccccc;
+    background-color: rgb(31, 105, 133);
+    cursor: pointer;
+}
+#submit-buuton:focus {
+    border: none;
+    appearance: none;
 }
 
 @media all and (max-width: 500px) {
@@ -487,14 +521,22 @@ ul {
         align-items: center;
     }
     .input-1 {
+        position: relative;
+        margin-right: 20vw;
+        left: 0;
         margin-left: 0;
     }
     .input-2 {
-        margin-right: 40vw;
+        position: relative;
+        left: 0;
+        margin-right: 20vw;
         margin-top: 2vh;
     }
     .input-3 {
-        margin-left: 20vw;
+        position: relative;
+        left: 0;
+        margin-right: 20vw;
+        margin-top: 2vh;
     }
     .form-cont {
         overflow-x: hidden;

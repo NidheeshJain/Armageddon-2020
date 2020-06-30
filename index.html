@@ -156,6 +156,12 @@
         </div>
         <div class="form-cont" id="form-container" onclick="func(this.id)">
             <div id="form-heading">REGISTER</div>
+            <div id="form-status">
+                <div id="status-img">
+                    <!-- <img src="assets/ui/tick.png"> -->
+                </div>
+                <div id="status-msg"></div>
+            </div>
             <form class="form" onsubmit="submitForm(event)">
                 <ul class="flex-outer">
                     <ul class="flex-inner">
@@ -163,24 +169,24 @@
                             <input type="text" name="squadName" class="myInput squad-name" placeholder="squad name">
                         </li>
                         <li class="input-2">
-                           <select class="myInput" name="selectGame">
+                           <select class="myInput selectGame" name="selectGame">
                             <option value="0">GAME</option>
                             <option value="1">GAME-1</option>
                             <option value="2">GAME-2</option>
                             <option value="3">GAME-3</option>
                             <option value="4">GAME-4</option>
                            </select>
+                           <li class="input-3">
+                            <select class="myInput" name="noOfPersons" oninput="inputRenderer(event, event.target.value)">
+                                <option value="0">NO. OF PLAYERS</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </li>
                         </li>
                     </ul>
-                    <li class="input-3">
-                        <select class="myInput" name="noOfPersons" oninput="inputRenderer(event, event.target.value)">
-                            <option value="0">NO. OF PLAYERS</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </li>
                     <!-- <ul class="flex-inner">
                         <li class="input-1">
                             <input type="text" class="myInput member-name" placeholder="">

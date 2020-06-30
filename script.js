@@ -23,8 +23,8 @@ const finalObj = {
 function inputRenderer(event, value) {
     event.preventDefault()
     let form = document.querySelector('.form')
-    finalObj.team_name = form.elements.squadName.value
-    finalObj.game_id = form.elements.selectGame.value
+    const squadName= form.elements.squadName.value
+    const gameId = form.elements.selectGame.value
     let flexOuter= document.querySelector('.flex-outer')
     let prevInputs = [...document.getElementsByClassName('member-name-username'), ...document.getElementsByClassName('member-phone-email')]
     if(prevInputs) {
@@ -53,7 +53,8 @@ function inputRenderer(event, value) {
         </li>
     </ul>`
     }
-    
+    document.getElementsByClassName('squad-name')[0].value = squadName
+    document.getElementsByClassName('selectGame')[0].value = gameId
 }
 
 function func(id) {
@@ -123,7 +124,7 @@ function closeAbout(href) {
     document.getElementById('home-images').style.display="block"
     document.getElementById('games-page').style.display="flex"
     document.querySelector('.contact-cont').style.display="block"
-    document.querySelector('.form-cont').style.display="none"
+    document.querySelector('.form-cont').style.display="block"
 }
 
 function openRegister() {
@@ -240,13 +241,17 @@ function img_slide1(input) {
 function submitForm(event) {
     event.preventDefault()
     const form = document.querySelector('.form')
+    const squadName = document.querySelector('.squad-name')
+    const gameId = document.querySelector('.selectGame')
+    finalObj.team_name = squadName.value
+    finalObj.game_id = gameId.value
     const names = document.getElementsByClassName('member-name'
     )
     const usernames = document.getElementsByClassName('member-username')
     const phones = document.getElementsByClassName('member-phone')
     const emails = document.getElementsByClassName('member-email')
     for(let i=0; i<names.length; ++i) {
-        console.log(names[i].value, emails[i].value, phones[i].value, usernames[i].value)
+       // console.log(names[i].value, emails[i].value, phones[i].value, usernames[i].value)
        finalObj.team_members.push({
            name : names[i].value,
            email_id: emails[i].value,
@@ -257,5 +262,44 @@ function submitForm(event) {
     }
     //console.log(form.elements[0].value)
     //console.log(form)
-    console.log(finalObj)
+
+    document.getElementById('form-status').style.display = "flex"
+    document.getElementById('status-img').innerHTML = `
+    <img src="assets/ui/loader.png">
+    `
+    document.getElementById('status-msg').innerHTML = `
+        Sending...
+    `
+    fetch('http://bits-apogee.org/arma/register_team', {
+        method : 'POST',
+        headers : {
+            'Content-Type' : 'application/json'
+        },
+        body : JSON.stringify(finalObj)
+    }).then(response => {
+        console.log(response.json())
+        document.getElementById('status-img').innerHTML = `
+    <img src="assets/ui/tick.png">
+    `
+    document.getElementById('status-msg').innerHTML = `
+        Successful
+    `
+    finalObj = {
+        team_name: null,
+        game_id: null,
+        team_members: []
+    }
+    form.elements.map(element => element.value = '')
+    })
+    .catch(error => {
+        console.log(error)
+        document.getElementById('status-img').innerHTML = `
+    <img src="assets/ui/criss-cross.png">
+    `
+    document.getElementById('status-msg').innerHTML = `
+        An error occured
+    `
+    })
+   // console.log(finalObj)
 }
+//  Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
