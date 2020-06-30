@@ -15,6 +15,47 @@ var home = document.querySelector('#home');
 //i = false;
 //console.log(i)
 let first_time=true
+function inputRenderer(value) {
+    let flexOuter= document.querySelector('.flex-outer')
+    let prevInputs = [...document.getElementsByClassName('member-name-username'), ...document.getElementsByClassName('member-phone-email')]
+    console.log(prevInputs)
+    if(prevInputs) {
+        prevInputs.map(input => {
+            //console.log(input)
+            flexOuter.removeChild(input)
+        })
+    }
+    for(let i=1; i<=value; ++i) {
+        flexOuter.innerHTML+=`<ul class="flex-inner member-name-username">
+        <li class="input-1">
+            <input type="text" class="myInput member-name " placeholder="name member ${i}">
+        </li>
+        <li class="input-2">
+            <input type="text" class="myInput member-username" placeholder="username member ${i}">
+        </li>
+    </ul>`
+    }
+    for(let i=1; i<=value; ++i) {
+        flexOuter.innerHTML+=`<ul class="flex-inner member-phone-email">
+        <li class="input-1">
+            <input type="number" class="myInput member-phone " placeholder="phone no of member ${i}">
+        </li>
+        <li class="input-2">
+            <input type="email" class="myInput member-email" placeholder="email member ${i}">
+        </li>
+    </ul>`
+    }
+    
+}
+
+function func(id) {
+    if(window.innerWidth>=500)
+        return
+    if(id==='navbar')
+        return
+    sidebarClose();
+}
+
 window.onscroll = function(e) {
     //console.log("hi");
     hidenav()
@@ -38,24 +79,54 @@ window.onscroll = function(e) {
 let checker = true;
 
 function sidebarOpen() {
+    if(window.innerWidth>=500) {
+        //console.log('return')
+        return
+    }
     document.getElementById('navbar').style.display = "flex";
 }
 
 function sidebarClose() {
+    if(window.innerWidth>=500) {
+      //  console.log('return')
+        return
+    }
     document.getElementById('navbar').style.display = "none"
 }
 
 function openAbout() {
-    console.log(document.getElementById('about-cont'))
+    window.scrollTo({
+        top: 0,
+        left : 0,
+        behavior: "smooth"
+    })
+    //console.log(document.getElementById('about-cont'))
     document.getElementById('about-cont').style.display = "flex"
     document.getElementById('home-images').style.display="none"
     document.getElementById('games-page').style.display="none"
+    document.querySelector('.form-cont').style.display='none'
 }
 function closeAbout(href) {
     document.getElementById('about-cont').style.display = "none"
     document.getElementById('home-images').style.display="block"
     document.getElementById('games-page').style.display="flex"
+    document.querySelector('.form-cont').style.display="none"
     window.location.href = href
+}
+
+function openRegister() {
+    //console.log(document.querySelector('.form-cont'))
+    window.scrollTo({
+        top: 0,
+        left : 0,
+        behavior: "smooth"
+    })
+    //console.log(document.querySelector('#navbar').style)
+    document.querySelector('.form-cont').style.display = "block"
+    document.getElementById('about-cont').style.display = "none"
+    document.getElementById('home-images').style.display="none"
+    document.getElementById('games-page').style.display="none"
+
 }
 
 function scroller(checker){
@@ -151,4 +222,12 @@ function img_slide1(input) {
     document.getElementsByClassName('game-img')[input].style.transform = '';
     document.getElementsByClassName('game-name')[input].style.color = 'transparent';
     document.getElementsByClassName('rules-cont')[input].style.display = 'none';
+}
+
+function submitForm(event) {
+    event.preventDefault()
+    const form = document.querySelector('.form')
+    let formData = new FormData(form)
+    //console.log(form.elements[0].value)
+    //console.log(form)
 }

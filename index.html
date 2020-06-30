@@ -17,7 +17,7 @@
             <div id="ham">
                 <a id="ham-open" onclick="sidebarOpen()"><img src="assets/ui/open-menu.png" id="ham-icon"></a>
             </div>
-            <nav id="navbar">
+            <nav id="navbar" onclick="func(this.id)">
                 <div id="ham">
                     <a id="ham-close" onclick="sidebarClose()"><img src="assets/ui/cancel.png" id="ham-icon"></a>
                 </div>
@@ -27,11 +27,11 @@
                 </div>
                 <div id="about-us-nav"><a class="nav-button" onclick="openAbout();sidebarClose()">ABOUT US</a></div>
                 <div id="right-nav">
-                    <div class="nav-button" onclick="sidebarClose()">CONTACT</div>
-                    <div class="nav-button register" onclick="closeAbout('#form-heading');sidebarClose()">REGISTER</div>
+                    <div class="nav-button" onclick="sidebarClose(); closeAbout('#contact-heading')">CONTACT</div>
+                    <div class="nav-button register" onclick="sidebarClose(); openRegister(); ">REGISTER</div>
                 </div>
             </nav>
-            <div id="home-images">
+            <div id="home-images" onclick="func(this.id)">
                 <div id="character-images" onclick="scroller(true)">
                     <img src="assets/img/left.png" id="left-img">
                     <img src="assets/img/center.png" id="center-img">
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <div id="about-cont">
+        <div id="about-cont" onclick="func(this.id)">
             <div id="about">
                 <div class="ah heading">ABOUT US</div>
                 <div class="punchline">Punchline</div>
@@ -66,7 +66,7 @@
 
         </div>
 
-        <div id="games-page">
+        <div id="games-page" onclick="func(this.id)">
             <div class='heading'>
                 GAMES
             </div>
@@ -154,17 +154,33 @@
                 </div>
             </div>
         </div>
-        <div class="form-cont">
+        <div class="contact-cont">
+            <div id="contact-heading">
+                CONTACT US
+            </div>
+            <div id= contact-info>
+                ISHAN GARG : 0123456789
+                <br>
+                <br>
+                NIDHEESH JAIN : 6969696969
+                <br>
+                <br>
+                PRIYANSHU SHUKLA : 4204206969
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="form-cont" id="form-container" onclick="func(this.id)">
             <div id="form-heading">REGISTER</div>
-            <form class="form">
+            <form class="form" onsubmit="submitForm(event)">
                 <ul class="flex-outer">
                     <ul class="flex-inner">
                         <li class="input-1">
-                            <input type="text" class="myInput" placeholder="input">
+                            <input type="text" class="myInput squad-name" placeholder="squad name">
                         </li>
                         <li class="input-2">
-                           <select class="myInput" name="input">
-                            <option value="0">SELECT GAME:</option>
+                           <select class="myInput" name="selct-game">
+                            <option value="0">GAME</option>
                             <option value="1">GAME-1</option>
                             <option value="2">GAME-2</option>
                             <option value="3">GAME-3</option>
@@ -172,50 +188,59 @@
                            </select>
                         </li>
                     </ul>
-                    <ul class="flex-inner">
+                    <li class="input-3">
+                        <select class="myInput" name="no-of-persons" oninput="inputRenderer(event.target.value)">
+                            <option value="0">NO. OF PLAYERS</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </li>
+                    <!-- <ul class="flex-inner">
                         <li class="input-1">
-                            <input type="text" class="myInput" placeholder="input">
+                            <input type="text" class="myInput member-name" placeholder="">
                         </li>
                         <li class="input-2">
-                            <input type="text" class="myInput" placeholder="input">
+                            <input type="text" class="myInput member-username" placeholder="input">
                         </li>
                     </ul>
                     <ul class="flex-inner">
                         <li class="input-1">
-                            <input type="text" class="myInput" placeholder="input">
+                            <input type="text" class="myInput member-name" placeholder="input">
                         </li>
                         <li class="input-2">
-                            <input type="text" class="myInput" placeholder="input">
+                            <input type="text" class="myInput member-username" placeholder="input">
                         </li>
                     </ul><ul class="flex-inner">
                         <li class="input-1">
-                            <input type="text" class="myInput" placeholder="input">
+                            <input type="text" class="myInput member-name" placeholder="input">
                         </li>
                         <li class="input-2">
-                            <input type="text" class="myInput" placeholder="input">
+                            <input type="text" class="myInput member-username" placeholder="input">
                         </li>
                     </ul><ul class="flex-inner">
                         <li class="input-1">
-                            <input type="text" class="myInput" placeholder="input">
+                            <input type="text" class="myInput member-name" placeholder="input">
                         </li>
                         <li class="input-2">
-                            <input type="text" class="myInput" placeholder="input">
+                            <input type="text" class="myInput member-username" placeholder="input">
                         </li>
                     </ul><ul class="flex-inner">
                         <li class="input-1">
-                            <input type="text" class="myInput" placeholder="input">
+                            <input type="text" class="myInput whatsapp-1" placeholder="input">
                         </li>
                         <li class="input-2">
-                            <input type="text" class="myInput" placeholder="input">
+                            <input type="text" class="myInput whatsapp-2" placeholder="input">
                         </li>
                     </ul><ul class="flex-inner">
                         <li class="input-1">
-                            <input type="text" class="myInput" placeholder="input">
+                            <input type="text" class="myInput phone-1" placeholder="input">
                         </li>
                         <li class="input-2">
-                            <input type="text" class="myInput" placeholder="input">
+                            <input type="text" class="myInput phone-2" placeholder="input">
                         </li>
-                    </ul>
+                    </ul> -->
                 </ul>
                 <button type="submit" id="submit-button">SUBMIT</button>
             </form>

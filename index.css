@@ -52,7 +52,6 @@ a {
     display: flex;
     flex-direction: column;
     background-color: black;
-    min-height: 100vh;
 }
 
 #home {
@@ -307,9 +306,24 @@ nav {
     font-size: 1.1em;
 }
 
+#contact-info, #contact-heading {
+    color:white;
+    margin-left: 10vw;
+    font-family: Azonix;
+    margin-top: 2vh;
+}
+
+#contact-heading {
+    font-size: 40px;
+    font-family: Stem-Bold;
+}
+
 .form-cont {
     width: 100vw;
-    margin-bottom: 8vh;
+    display: none;
+    position: absolute;
+    background-color: black;
+    top: 15vh;
 }
 
 #form-heading {
@@ -325,6 +339,7 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 5vh;
 }
 
 ul {
@@ -351,8 +366,13 @@ ul {
 .input-2 {
     margin-left: 20vw;
 }
+.input-3 {
+    margin-left: 30vw;
+    margin-top: 5vh;
+}
 
 .myInput {
+    padding: 8px;
     height: 4vh;
     width: 20vw;
     border: 1.75px solid #00B9FF;
@@ -368,7 +388,6 @@ ul {
     color: #bbbbbb;
     letter-spacing: 2px;
 }
-
 #submit-button {
     height: 5vh;
     width: 10vh;
@@ -376,6 +395,9 @@ ul {
 }
 
 @media all and (max-width: 500px) {
+    body {
+        overflow-x: hidden;
+    }
     #about-cont {
         display: none;
         position: absolute;
@@ -392,7 +414,7 @@ ul {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        position: absolute;
+        position: fixed;
         /* height: 50vh; */
         height: auto;
         width: 50vw;
@@ -430,7 +452,7 @@ ul {
     }
     #ham {
         display: block;
-        position: absolute;
+        position: fixed;
         right: 0;
         top: 0;
         margin-top: 2vh;
@@ -467,6 +489,12 @@ ul {
     .input-2 {
         margin-right: 40vw;
         margin-top: 2vh;
+    }
+    .input-3 {
+        margin-left: 20vw;
+    }
+    .form-cont {
+        overflow-x: hidden;
     }
     .form {
         margin-left: 20vw;
