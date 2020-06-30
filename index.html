@@ -28,7 +28,7 @@
                 <div id="about-us-nav"><a class="nav-button" onclick="openAbout();sidebarClose()">ABOUT US</a></div>
                 <div id="right-nav">
                     <div class="nav-button" onclick="sidebarClose(); closeAbout('#contact-heading')">CONTACT</div>
-                    <div class="nav-button register" onclick="sidebarClose(); openRegister(); ">REGISTER</div>
+                    <div class="nav-button register" onclick="sidebarClose(); closeAbout('#form-container'); ">REGISTER</div>
                 </div>
             </nav>
             <div id="home-images" onclick="func(this.id)">
@@ -154,22 +154,6 @@
                 </div>
             </div>
         </div>
-        <div class="contact-cont">
-            <div id="contact-heading">
-                CONTACT US
-            </div>
-            <div id= contact-info>
-                ISHAN GARG : 0123456789
-                <br>
-                <br>
-                NIDHEESH JAIN : 6969696969
-                <br>
-                <br>
-                PRIYANSHU SHUKLA : 4204206969
-                <br>
-                <br>
-            </div>
-        </div>
         <div class="form-cont" id="form-container" onclick="func(this.id)">
             <div id="form-heading">REGISTER</div>
             <form class="form" onsubmit="submitForm(event)">
@@ -244,6 +228,22 @@
                 </ul>
                 <button type="submit" id="submit-button">SUBMIT</button>
             </form>
+        </div>
+        <div class="contact-cont">
+            <div id="contact-heading">
+                CONTACT US
+            </div>
+            <div id= contact-info>
+                ISHAN GARG : 0123456789
+                <br>
+                <br>
+                NIDHEESH JAIN : 6969696969
+                <br>
+                <br>
+                PRIYANSHU SHUKLA : 4204206969
+                <br>
+                <br>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>

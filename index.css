@@ -324,8 +324,8 @@ nav {
 
 .form-cont {
     width: 100vw;
-    display: none;
-    position: absolute;
+    /* display: none; */
+    /* position: absolute; */
     background-color: black;
     top: 15vh;
 }
