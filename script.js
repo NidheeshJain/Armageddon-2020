@@ -1,19 +1,8 @@
-console.log(window.innerHeight, window.innerWidth)
+//console.log(window.innerHeight, window.innerWidth)
+document.onreadystatechange = () => {
+    console.log(document.readyState)
+}
 var home = document.querySelector('#home');
-//let vh = window.innerHeight/100;
-//let vw = window.innerWidth/100;
-// //console.log(home)
-// let i = true;
-// console.log(i);
-// home.addEventListener('click', (i) => {
-//     while(i == true){
-//     window.scrollBy(0, 150);
-//     }
-//     i = false;
-//     //console.log(window.scrollY);
-// })
-//i = false;
-//console.log(i)
 let first_time = true
 let finalObj = {
     team_name: null,
