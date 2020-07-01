@@ -324,7 +324,7 @@ function submitForm(event) {
         Unsuccessful
     `
         }
-        console.log(response.json())
+        //console.log(response.json())
 
         finalObj = {
             team_name: null,
