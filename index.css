@@ -41,17 +41,20 @@ a {
 }
 
 .loader {
-    position: absolute;
     font-family: Azonix;
     font-size: 20px;
     height: 100vh;
     width: 100vw;
     color: white;
-    top: 40vh;
-    left: 35vw;
     background-color: black;
     z-index: 30;
     display: block;
+}
+
+#loader-text {
+    position: absolute;
+    top: 35vh;
+    left: 35vw;
 }
 
 #wrapper {

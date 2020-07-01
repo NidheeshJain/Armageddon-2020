@@ -22,9 +22,9 @@ function updateProgress () {
         // document.querySelector('#wrapper').style.display = "flex"
             
         // }, 5000)
-        document.querySelector('.loader').innerHTML = `Loading... 100 %`
-        document.querySelector('.loader').style.display = "none"
-        document.querySelector('.loader').style.zIndex = "-1"
+        document.querySelector('#loader-text').innerHTML = `Loading... 100 %`
+        document.querySelector('#loader-text').style.display = "none"
+        document.querySelector('#loader-text').style.zIndex = "-1"
         document.querySelector('#wrapper').style.opacity = "1"
         document.querySelector('#wrapper').style.display = "flex"
     }
@@ -36,30 +36,30 @@ function updateProgress () {
         progress = progress + 1;
         if(progress >= 0 && progress <= 30){
             animationInterval += 1;
-            document.querySelector('.loader').innerHTML = `Loading ${progress} %`;
+            document.querySelector('#loader-text').innerHTML = `Loading ${progress} %`;
         }
         else if(progress > 30 && progress <= 60){
             animationInterval += 2;
-            document.querySelector('.loader').innerHTML = `Loading ${progress} %`;
+            document.querySelector('#loader-text').innerHTML = `Loading ${progress} %`;
         }
         else if(progress > 60 && progress <= 80){
             animationInterval += 3;
-            document.querySelector('.loader').innerHTML = `Loading ${progress} %`;
+            document.querySelector('#loader-text').innerHTML = `Loading ${progress} %`;
         }
         else if(progress > 80 && progress <= 90){
             animationInterval += 4;
-            document.querySelector('.loader').innerHTML = `Loading ${progress} %`;
+            document.querySelector('#loader-text').innerHTML = `Loading ${progress} %`;
         }
         else if(progress > 90 && progress <= 95){
             animationInterval += 80;
-            document.querySelector('.loader').innerHTML = `Loading ${progress} %`;
+            document.querySelector('#loader-text').innerHTML = `Loading ${progress} %`;
         }
         else if(progress > 95 && progress <= 99){
             animationInterval += 160;
-            document.querySelector('.loader').innerHTML = `Loading ${progress} %`;
+            document.querySelector('#loader-text').innerHTML = `Loading ${progress} %`;
         }
         else if(progress >= 100){
-            document.querySelector('.loader').innerHTML = `Loading 99 %`;
+            document.querySelector('#loader-text').innerHTML = `Loading 99 %`;
         }
         setTimeout(updateProgress, animationInterval);    
     }
@@ -74,7 +74,7 @@ function updateProgress () {
     }, 1);
 
 
-//loader ends here
+/#loader-text ends here
 
 var home = document.querySelector('#home');
 let first_time = true
