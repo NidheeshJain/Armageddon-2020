@@ -52,6 +52,10 @@ a {
     display: flex;
     flex-direction: column;
     background-color: black;
+    background-image: url(./assets/ui/Rectangle\ 1.png);
+    background-attachment: fixed;
+    background-size: 100vw 100vh;
+    background-repeat: repeat-y;
 }
 
 #home {
@@ -198,7 +202,7 @@ nav {
 #about {
     width: 80vw;
     min-height: 50vh;
-    background-color: black;
+    /* background-color: black; */
     color: white;
     flex-direction: column;
     align-items: center;
@@ -224,7 +228,7 @@ nav {
 #games-page {
     width: 100vw;
     height: 75vh;
-    background-color: black;
+    /* background-color: black; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -336,7 +340,7 @@ nav {
     width: 100vw;
     /* display: none; */
     /* position: absolute; */
-    background-color: black;
+    /* background-color: black; */
 }
 
 #form-heading {
