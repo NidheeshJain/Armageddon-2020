@@ -1,7 +1,81 @@
 //console.log(window.innerHeight, window.innerWidth)
+
+//loader starts here
+
+let pageStatus = null
+var progress = null
+var animationInterval = 33
 document.onreadystatechange = () => {
-    console.log(document.readyState)
+   // console.log('hi');
+    if(document.readyState === "complete")
+        pageStatus = "complete"
 }
+
+function updateProgress () {
+    console.log(progress)
+    if(pageStatus === "complete") {
+        // setTimeout(() => {
+        //     document.querySelector('.loader').innerHTML = 100
+        // document.querySelector('.loader').style.display = "none"
+        // document.querySelector('.loader').style.zIndex = "-1"
+        // document.querySelector('#wrapper').style.opacity = "1"
+        // document.querySelector('#wrapper').style.display = "flex"
+            
+        // }, 5000)
+        document.querySelector('.loader').innerHTML = 100
+        document.querySelector('.loader').style.display = "none"
+        document.querySelector('.loader').style.zIndex = "-1"
+        document.querySelector('#wrapper').style.opacity = "1"
+        document.querySelector('#wrapper').style.display = "flex"
+    }
+    else {
+        if(progress == null){
+            progress = 1;
+        }
+       
+        progress = progress + 1;
+        if(progress >= 0 && progress <= 30){
+            animationInterval += 1;
+            document.querySelector('.loader').innerHTML = progress;
+        }
+        else if(progress > 30 && progress <= 60){
+            animationInterval += 2;
+            document.querySelector('.loader').innerHTML = progress;
+        }
+        else if(progress > 60 && progress <= 80){
+            animationInterval += 3;
+            document.querySelector('.loader').innerHTML = progress;
+        }
+        else if(progress > 80 && progress <= 90){
+            animationInterval += 4;
+            document.querySelector('.loader').innerHTML = progress;
+        }
+        else if(progress > 90 && progress <= 95){
+            animationInterval += 80;
+            document.querySelector('.loader').innerHTML = progress;
+        }
+        else if(progress > 95 && progress <= 99){
+            animationInterval += 150;
+            document.querySelector('.loader').innerHTML = progress;
+        }
+        else if(progress >= 100){
+            document.querySelector('.loader').innerHTML = 99;
+        }
+        setTimeout(updateProgress, animationInterval);    
+    }
+    }
+    var intervalObject_1 = setInterval(function(){
+        //console.log('hi')
+        var element = document.querySelector("body");
+        if(element != undefined){
+            clearInterval(intervalObject_1);
+            updateProgress();            
+        }
+    }, 50);
+
+
+//loader ends here
+
 var home = document.querySelector('#home');
 let first_time = true
 let finalObj = {

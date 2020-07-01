@@ -40,22 +40,34 @@ a {
     width: 0;
 }
 
-.heading {
-    font-family: Stem-Bold;
-    font-size: 3em;
-    letter-spacing: .01vw;
-    width: 80vw;
+.loader {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    font-family: Azonix;
+    font-size: 20px;
+    background-color: black;
+    z-index: 30;
+    display: block;
 }
 
 #wrapper {
     width: 100vw;
-    display: flex;
+    display: none;
+    transition: opacity 1s ease-in;
+    opacity: 0;
     flex-direction: column;
     background-color: black;
     background-image: url(./assets/ui/Rectangle\ 1.png);
     background-attachment: fixed;
     background-size: 100vw 100vh;
     background-repeat: repeat-y;
+}
+.heading {
+    font-family: Stem-Bold;
+    font-size: 3em;
+    letter-spacing: .01vw;
+    width: 80vw;
 }
 
 #home {
