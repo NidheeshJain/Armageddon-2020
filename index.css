@@ -455,6 +455,9 @@ select {
     body {
         overflow-x: hidden;
     }
+    #left-nav, #right-nav, #about-us-nav {
+        letter-spacing: 2px;
+    }
     #about-cont {
         display: none;
         position: absolute;
