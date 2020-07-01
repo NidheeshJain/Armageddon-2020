@@ -164,12 +164,12 @@ function sidebarOpen() {
 }
 
 function sidebarClose(href) {
+    if(href) 
+    window.location.href = href
     if (window.innerWidth >= 500) {
         //  console.log('return')
         return
     }
-    if(href) 
-        window.location.href = href
     // document.getElementById('navbar').style.display = "none"
     // document.getElementById('ham-close').style.display = "none";
     document.getElementById('navbar').style.right = "-55vw";
