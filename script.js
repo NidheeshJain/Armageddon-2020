@@ -22,8 +22,8 @@ function updateProgress () {
         // document.querySelector('#wrapper').style.display = "flex"
             
         // }, 5000)
+        document.querySelector('#loader-text').innerHTML = `Loading... 100 %`
         setTimeout(() => {
-            document.querySelector('#loader-text').innerHTML = `Loading... 100 %`
         document.querySelector('#loader-text').style.display = "none"
         document.querySelector('#apogee-img-div').style.display = "none"
         document.querySelector('#apogee-img-div').style.width = "0"
