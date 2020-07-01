@@ -350,17 +350,17 @@ nav {
 #form-status {
     display: none;
     margin-top: 2.5vh;
-    margin-left: 20vw;
     border: 2px dashed #00B9FF;
-    width: 60vw;
     padding: 10px;
+    width:fit-content;
+    margin:auto;
 }
 
 #status-msg {
     color: white;
     font-family: Azonix;
     margin-top: 6px;
-    margin-left: 15vw;
+    margin-left: 2vw;
 }
 
 .form {
