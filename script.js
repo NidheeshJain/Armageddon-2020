@@ -37,15 +37,15 @@ function updateProgress () {
        
         progress = progress + 1;
         if(progress >= 0 && progress <= 30){
-            animationInterval += 2;
+            animationInterval += 1;
             document.querySelector('#loader-text').innerHTML = `Loading ${progress} %`;
         }
         else if(progress > 30 && progress <= 60){
-            animationInterval += 4;
+            animationInterval += 2;
             document.querySelector('#loader-text').innerHTML = `Loading ${progress} %`;
         }
         else if(progress > 60 && progress <= 80){
-            animationInterval += 6;
+            animationInterval += 4;
             document.querySelector('#loader-text').innerHTML = `Loading ${progress} %`;
         }
         else if(progress > 80 && progress <= 90){
@@ -57,7 +57,7 @@ function updateProgress () {
             document.querySelector('#loader-text').innerHTML = `Loading ${progress} %`;
         }
         else if(progress > 95 && progress <= 99){
-            animationInterval += 200;
+            animationInterval += 180;
             document.querySelector('#loader-text').innerHTML = `Loading ${progress} %`;
         }
         else if(progress >= 100){
