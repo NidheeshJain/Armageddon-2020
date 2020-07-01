@@ -13,17 +13,26 @@
 
 <body>
     <div class="loader">
+        <div id="apogee-img-div">
+            <img class="apogee-img" src="assets/img/Apogee@2x.png">
+        </div>
         <div id="loader-text"></div>
     </div>
     <div id="wrapper">
         <div id="home">
             <div class="ham">
-                <a id="ham-open" onclick="sidebarOpen()"><img src="assets/ui/open-menu.png" id="ham-icon"></a>
+                <a id="ham-open" onclick="sidebarOpen()">
+                    <div id="ham-cont">
+                        <div id="bar1"></div>
+                        <div id="bar2"></div>
+                        <div id="bar3"></div>
+                    </div>
+                </a>
             </div>
             <nav id="navbar" onclick="func(this.id)">
-                <div class="ham">
+                <!-- <div class="ham">
                     <a id="ham-close" onclick="sidebarClose(null)"><img src="assets/ui/cancel.png" id="ham-icon"></a>
-                </div>
+                </div> -->
                 <div id="left-nav">
                     <div class="nav-button" onclick="sidebarClose('#home')">HOME</div>
                     <div class="nav-button" onclick="sidebarClose('#game-cont')">GAMES</div>

@@ -40,9 +40,22 @@ a {
     width: 0;
 }
 
+#apogee-img-div {
+    width: 50vw;
+    height: auto;
+    padding: 10px;
+    position: absolute;
+    left: 40vw;
+    top: 30vh;
+}
+
+.apogee-img {
+    width: 15vw;
+    height: 5vh;
+}
+
 .loader {
     font-family: Azonix;
-    font-size: 20px;
     height: 100vh;
     width: 100vw;
     color: white;
@@ -53,8 +66,9 @@ a {
 
 #loader-text {
     position: absolute;
-    top: 35vh;
-    left: 35vw;
+    font-size: 20px;
+    top: 45vh;
+    left: 45vw;
 }
 
 #wrapper {
@@ -484,6 +498,19 @@ select {
     body {
         overflow-x: hidden;
     }
+    #apogee-img-div {
+        left: 30vw;
+    }
+    .apogee-img {
+        height: auto;
+        width: 40vw;
+    }
+
+    #loader-text {
+        left: 35vw;
+    }
+
+
     #left-nav, #right-nav, #about-us-nav {
         letter-spacing: 2px;
     }
@@ -536,9 +563,6 @@ select {
         margin-top: calc(1.5vh - 5px);
         margin-bottom: 4vh;
     }
-    #ham-close{
-        display:none;
-    }
     .ham {
         display: block;
         position: fixed;
@@ -546,8 +570,15 @@ select {
         top: 0;
         margin-top: 2vh;
         margin-right: 5vw;
-        z-index: 10;
+        z-index: 15;
     }
+    #ham-cont > div {
+        width: 35px;
+  height: 2px;
+  background-color:white;
+  margin: 6px 0;
+    }
+
     #about-us-nav {
         display: block;
     }

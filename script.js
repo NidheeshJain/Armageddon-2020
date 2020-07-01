@@ -24,6 +24,8 @@ function updateProgress () {
         // }, 5000)
         document.querySelector('#loader-text').innerHTML = `Loading... 100 %`
         document.querySelector('#loader-text').style.display = "none"
+        document.querySelector('#apogee-img-div').style.display = "none"
+        document.querySelector('#apogee-img-div').style.width = "0"
         document.querySelector('#loader-text').style.zIndex = "-1"
         document.querySelector('.loader').style.height = "0"
         document.querySelector('.loader').style.width = "0"
@@ -157,7 +159,7 @@ function sidebarOpen() {
         //console.log('return')
         return
     }
-    document.getElementById('ham-close').style.display = "block";
+    //document.getElementById('ham-close').style.display = "block";
     document.getElementById('navbar').style.right = "2px";
 }
 
@@ -169,7 +171,7 @@ function sidebarClose(href) {
     if(href) 
         window.location.href = href
     // document.getElementById('navbar').style.display = "none"
-    document.getElementById('ham-close').style.display = "none";
+    // document.getElementById('ham-close').style.display = "none";
     document.getElementById('navbar').style.right = "-55vw";
 }
 function scroller(checker) {
