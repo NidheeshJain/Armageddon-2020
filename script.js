@@ -92,7 +92,8 @@ function sidebarOpen() {
         //console.log('return')
         return
     }
-    document.getElementById('navbar').style.display = "flex";
+    document.getElementById('ham-close').style.display = "block";
+    document.getElementById('navbar').style.right = "2px";
 }
 
 function sidebarClose() {
@@ -100,7 +101,9 @@ function sidebarClose() {
         //  console.log('return')
         return
     }
-    document.getElementById('navbar').style.display = "none"
+    // document.getElementById('navbar').style.display = "none"
+    document.getElementById('ham-close').style.display = "none";
+    document.getElementById('navbar').style.right = "-55vw";
 }
 
 function openAbout() {

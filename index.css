@@ -74,7 +74,7 @@ nav {
     overflow-x: hidden;
 }
 
-#ham {
+.ham {
     display: none;
 }
 
@@ -470,7 +470,7 @@ select {
         display: none;
     }
     nav {
-        display: none;
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -478,7 +478,9 @@ select {
         /* height: 50vh; */
         height: auto;
         width: 50vw;
-        right: 0;
+        /* right:0; */
+        right: -55vw;
+        transition: all 0.1s ease-in-out;
     }
     #left-nav, #right-nav, #about-us-nav {
         display: flex;
@@ -510,7 +512,10 @@ select {
         margin-top: calc(1.5vh - 5px);
         margin-bottom: 4vh;
     }
-    #ham {
+    #ham-close{
+        display:none;
+    }
+    .ham {
         display: block;
         position: fixed;
         right: 0;
@@ -524,7 +529,7 @@ select {
     }
     #logo img {
         width: 95vw;
-        transform: translateY(55vh);
+        transform: translateY(65vh);
     }
     #left-img, #right-img {
         display: none;
