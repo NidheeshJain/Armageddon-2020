@@ -12,7 +12,7 @@ document.onreadystatechange = () => {
 }
 
 function updateProgress () {
-    console.log(progress)
+    //console.log(progress)
     if(pageStatus === "complete") {
         // setTimeout(() => {
         //     document.querySelector('.loader').innerHTML = 100
@@ -25,6 +25,8 @@ function updateProgress () {
         document.querySelector('#loader-text').innerHTML = `Loading... 100 %`
         document.querySelector('#loader-text').style.display = "none"
         document.querySelector('#loader-text').style.zIndex = "-1"
+        document.querySelector('.loader').style.height = "0"
+        document.querySelector('.loader').style.width = "0"
         document.querySelector('#wrapper').style.opacity = "1"
         document.querySelector('#wrapper').style.display = "flex"
     }
