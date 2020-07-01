@@ -22,7 +22,7 @@ function updateProgress () {
         // document.querySelector('#wrapper').style.display = "flex"
             
         // }, 5000)
-        document.querySelector('.loader').innerHTML = 100
+        document.querySelector('.loader').innerHTML = `Loading... 100 %`
         document.querySelector('.loader').style.display = "none"
         document.querySelector('.loader').style.zIndex = "-1"
         document.querySelector('#wrapper').style.opacity = "1"
@@ -36,30 +36,30 @@ function updateProgress () {
         progress = progress + 1;
         if(progress >= 0 && progress <= 30){
             animationInterval += 1;
-            document.querySelector('.loader').innerHTML = progress;
+            document.querySelector('.loader').innerHTML = `Loading ${progress} %`;
         }
         else if(progress > 30 && progress <= 60){
             animationInterval += 2;
-            document.querySelector('.loader').innerHTML = progress;
+            document.querySelector('.loader').innerHTML = `Loading ${progress} %`;
         }
         else if(progress > 60 && progress <= 80){
             animationInterval += 3;
-            document.querySelector('.loader').innerHTML = progress;
+            document.querySelector('.loader').innerHTML = `Loading ${progress} %`;
         }
         else if(progress > 80 && progress <= 90){
             animationInterval += 4;
-            document.querySelector('.loader').innerHTML = progress;
+            document.querySelector('.loader').innerHTML = `Loading ${progress} %`;
         }
         else if(progress > 90 && progress <= 95){
             animationInterval += 80;
-            document.querySelector('.loader').innerHTML = progress;
+            document.querySelector('.loader').innerHTML = `Loading ${progress} %`;
         }
         else if(progress > 95 && progress <= 99){
-            animationInterval += 150;
-            document.querySelector('.loader').innerHTML = progress;
+            animationInterval += 160;
+            document.querySelector('.loader').innerHTML = `Loading ${progress} %`;
         }
         else if(progress >= 100){
-            document.querySelector('.loader').innerHTML = 99;
+            document.querySelector('.loader').innerHTML = `Loading 99 %`;
         }
         setTimeout(updateProgress, animationInterval);    
     }
@@ -71,7 +71,7 @@ function updateProgress () {
             clearInterval(intervalObject_1);
             updateProgress();            
         }
-    }, 50);
+    }, 1);
 
 
 //loader ends here
