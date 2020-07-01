@@ -446,6 +446,14 @@ ul {
     letter-spacing: 2px;
 }
 
+input:focus, select:focus {
+    outline: none;
+}
+
+button:focus, button:active {
+    outline: none;
+}
+
 select {
     letter-spacing: 3px;
     padding: 12px;
@@ -468,9 +476,8 @@ select {
     cursor: pointer;
 }
 
-#submit-buuton:focus {
-    border: none;
-    appearance: none;
+#submit-buuton:focus, #submit-butoon:active {
+    outline: none;
 }
 
 @media all and (max-width: 500px) {
@@ -479,11 +486,6 @@ select {
     }
     #left-nav, #right-nav, #about-us-nav {
         letter-spacing: 2px;
-    }
-    #about-cont {
-        display: none;
-        position: absolute;
-        top: 3vh;
     }
     #about {
         width: 90vw;
@@ -622,6 +624,6 @@ select {
         margin-top: 6vh;
     }
     .myInput {
-        width: 50vw;
+        width: 75vw;
     }
 }

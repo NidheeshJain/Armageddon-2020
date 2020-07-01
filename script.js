@@ -161,56 +161,17 @@ function sidebarOpen() {
     document.getElementById('navbar').style.right = "2px";
 }
 
-function sidebarClose() {
+function sidebarClose(href) {
     if (window.innerWidth >= 500) {
         //  console.log('return')
         return
     }
+    if(href) 
+        window.location.href = href
     // document.getElementById('navbar').style.display = "none"
     document.getElementById('ham-close').style.display = "none";
     document.getElementById('navbar').style.right = "-55vw";
 }
-
-function openAbout() {
-    window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth"
-    })
-    //console.log(document.getElementById('about-cont'))
-    document.querySelector('.contact-cont').style.display = "none"
-    document.getElementById('about-cont').style.display = "flex"
-    document.getElementById('home-images').style.display = "none"
-    document.getElementById('games-page').style.display = "none"
-    document.querySelector('.form-cont').style.display = 'none'
-}
-function closeAbout(href) {
-    window.location.href = href
-    if (window.innerWidth >= 500)
-        return
-    document.getElementById('about-cont').style.display = "none"
-    document.getElementById('home-images').style.display = "block"
-    document.getElementById('games-page').style.display = "flex"
-    document.querySelector('.contact-cont').style.display = "block"
-    document.querySelector('.form-cont').style.display = "block"
-}
-
-function openRegister() {
-    //console.log(document.querySelector('.form-cont'))
-    window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth"
-    })
-    //console.log(document.querySelector('#navbar').style)
-    document.querySelector('.form-cont').style.display = "block"
-    document.getElementById('about-cont').style.display = "none"
-    document.getElementById('home-images').style.display = "none"
-    document.getElementById('games-page').style.display = "none"
-    document.querySelector('.contact-cont').style.display = "none"
-
-}
-
 function scroller(checker) {
 
     if (window.pageYOffset < 175) {
@@ -380,6 +341,7 @@ function submitForm(event) {
             document.getElementById('status-msg').innerHTML = `
         An error occured
     `
+    document.getElementById('form-status').style.borderColor = `red`
         })
     // console.log(finalObj)
 }
