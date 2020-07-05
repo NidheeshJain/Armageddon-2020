@@ -1,16 +1,16 @@
 @font-face {
     font-family: Azonix;
-    src: url(./assets/fonts/Azonix.otf)
+    src: url(../assets/fonts/Azonix.otf)
 }
 
 @font-face {
     font-family: Stem-Bold;
-    src: url(./assets/fonts/Stem-Bold/Stem-Bold.otf);
+    src: url(../assets/fonts/Stem-Bold/Stem-Bold.otf);
 }
 
 @font-face {
     font-family: Stem-Regular;
-    src: url(./assets/fonts/Stem-Bold/Stem-Regular.otf);
+    src: url(../assets/fonts/Stem-Bold/Stem-Regular.otf);
 }
 
 * {
@@ -40,20 +40,6 @@ a {
     width: 0;
 }
 
-#apogee-img-div {
-    width: 50vw;
-    height: auto;
-    padding: 10px;
-    position: absolute;
-    left: 40vw;
-    top: 30vh;
-}
-
-.apogee-img {
-    width: 15vw;
-    height: 5vh;
-}
-
 .loader {
     font-family: Azonix;
     height: 100vh;
@@ -66,9 +52,12 @@ a {
 
 #loader-text {
     position: absolute;
-    font-size: 20px;
+    height: 50vw;
+    width: 60vw;
+    left: 20vw;
+    top: 25vw;
+    font-size: 30px;
     top: 45vh;
-    left: 45vw;
 }
 
 #wrapper {
@@ -78,7 +67,7 @@ a {
     opacity: 0;
     flex-direction: column;
     background-color: black;
-    background-image: url(./assets/ui/Rectangle\ 1.png);
+    background-image: url(../assets/ui/Rectangle\ 1.png);
     background-attachment: fixed;
     background-size: 100vw 100vh;
     background-repeat: repeat-y;
@@ -362,155 +351,28 @@ nav {
     font-family: Azonix;
     margin-top: 2vh;
 }
+#contact-info {
+    width: 80vw;
+    margin-left: 20vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
 #contact-heading {
     font-size: 40px;
     font-family: Stem-Bold;
 }
 
-.form-cont {
-    width: 100vw;
-    /* display: none; */
-    /* position: absolute; */
-    /* background-color: black; */
-}
 
-#form-heading {
-    margin-left: 10vw;
-    color: white;
-    font-family: Stem-Bold;
-    text-align: left;
-    font-size: 40px;
-}
-
-#form-status {
-    display: none;
-    margin-top: 2.5vh;
-    border: 2px dashed #00B9FF;
-    padding: 10px;
-    width:fit-content;
-    margin:auto;
-}
-
-#status-msg {
-    color: white;
-    font-family: Azonix;
-    margin-top: 6px;
-    margin-left: 2vw;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 5vh;
-}
-
-ul {
-    list-style-type: none;
-}
-
-.flex-outer {
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-outer>ul {
-    margin-top: 10vh;
-}
-
-.flex-inner {
-    display: flex;
-}
-
-.input-1 {
-    position: absolute;
-    left: 10vw;
-}
-
-.input-2:first-child {
-    position: absolute;
-    left: 40vw;
-}
-
-.input-2:not(:first) {
-    left: 70vw;
-}
-
-.input-3 {
-    position: absolute;
-    left: 70vw;
-}
-
-.myInput {
-    padding: 12px;
-    width: 20vw;
-    border: 1.75px solid #00B9FF;
-    background-color: black;
-    box-sizing: border-box;
-    color: white;
-    font-family: Azonix;
-}
-
-.myInput::placeholder {
-    padding: 8px;
-    font-family: Azonix;
-    color: #bbbbbb;
-    letter-spacing: 2px;
-}
-
-input:focus, select:focus {
-    outline: none;
-}
-
-button:focus, button:active {
-    outline: none;
-}
-
-select {
-    letter-spacing: 3px;
-    padding: 12px;
-}
-
-#submit-button {
-    height: 5vh;
-    width: 20vh;
-    margin-top: 10vh;
-    background-color: #00B9FF;
-    color: black;
-    font-family: Azonix;
-    font-size: 20px;
-    border: none;
-}
-
-#submit-button:hover {
-    color: #cccccc;
-    background-color: rgb(31, 105, 133);
-    cursor: pointer;
-}
-
-#submit-buuton:focus, #submit-butoon:active {
-    outline: none;
-}
 
 @media all and (max-width: 500px) {
     body {
         overflow-x: hidden;
     }
-    #apogee-img-div {
-        left: 30vw;
-    }
-    .apogee-img {
-        height: auto;
-        width: 40vw;
-    }
-
     #loader-text {
-        left: 35vw;
+        font-size: 20px;
     }
-
-
     #left-nav, #right-nav, #about-us-nav {
         letter-spacing: 2px;
     }
@@ -531,7 +393,7 @@ select {
         width: 50vw;
         /* right:0; */
         right: -55vw;
-        transition: all 0.1s ease-in-out;
+        transition: all 0.25s ease-in-out;
     }
     #left-nav, #right-nav, #about-us-nav {
         display: flex;
@@ -574,10 +436,26 @@ select {
     }
     #ham-cont > div {
         width: 35px;
-  height: 2px;
-  background-color:white;
+  height: 2.5px;
+  background-color: #fff;
   margin: 6px 0;
+  transition: 0.4s;
     }
+    .change #bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 3px) ;
+        transform: rotate(-45deg) translate(-9px, 3px) ;
+      }
+      
+      /* Fade out the second#bar */
+      .change #bar2 {
+        opacity: 0;
+      }
+      
+      /* Rotate last#bar */
+      .change #bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -4px) ;
+        transform: rotate(45deg) translate(-8px, -4px) ;
+      }
 
     #about-us-nav {
         display: block;
@@ -620,41 +498,10 @@ select {
         width: 80%;
         transform: translateY(-10vh);
     }
-    .flex-inner {
+    #contact-info {
         flex-direction: column;
-        align-items: center;
     }
-    .input-1 {
-        position: relative;
-        margin-right: 20vw;
-        left: 0;
-        margin-left: 0;
-    }
-    .input-2 {
-        position: relative;
-        left: 0;
-        margin-right: 20vw;
-        margin-top: 2vh;
-    }
-    .input-3 {
-        position: relative;
-        left: 0;
-        margin-right: 20vw;
-        margin-top: 2vh;
-    }
-    .form-cont {
-        overflow-x: hidden;
-    }
-    .form {
-        margin-left: 20vw;
-    }
-    #submit-button {
-        margin-left: -20vw;
-    }
-    .flex-outer>ul {
-        margin-top: 6vh;
-    }
-    .myInput {
-        width: 75vw;
+    #contact-info div:not(:first-of-type) {
+        margin-top: 12px;
     }
 }

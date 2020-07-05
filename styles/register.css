@@ -1,0 +1,229 @@
+@font-face {
+    font-family: Azonix;
+    src: url(../assets/fonts/Azonix.otf)
+}
+
+@font-face {
+    font-family: Stem-Bold;
+    src: url(../assets/fonts/Stem-Bold/Stem-Bold.otf);
+}
+
+@font-face {
+    font-family: Stem-Regular;
+    src: url(../assets/fonts/Stem-Bold/Stem-Regular.otf);
+}
+* {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+    .loader {
+        position: absolute;
+        top: 0;
+        left: 0;
+    font-family: Azonix;
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    background-color: black;
+    z-index: 30;
+    display: block;
+}
+
+#loader-text {
+    position: absolute;
+    height: 50vw;
+    width: 60vw;
+    left: 40vw;
+    top: 25vw;
+    font-size: 30px;
+    top: 45vh;
+}
+
+
+.wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    opacity: 0;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../assets/ui/Rectangle\ 1.png);
+    background-attachment: fixed;
+    background-size: 100vw 100vh;
+    background-repeat: repeat-y;
+}
+.form-cont {
+    width: 100vw;
+    margin-bottom: 8px;
+    /* display: none; */
+    /* position: absolute; */
+    /* background-color: black; */
+}
+
+#form-heading {
+    position: relative;
+    left: 10vw;
+    width: 80vw;
+    text-align: center;
+    margin-top: 2.5vh;
+    color: white;
+    font-family: Azonix;
+    font-size: 40px;
+}
+
+#form-status {
+    display: none;
+    margin-top: 2.5vh;
+    border: 2px dashed #00B9FF;
+    padding: 10px;
+    width:fit-content;
+    margin:auto;
+}
+
+#status-msg {
+    color: white;
+    font-family: Azonix;
+    margin-top: 6px;
+    margin-left: 2vw;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5vh;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.flex-outer {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-outer>ul {
+    margin-top: 10vh;
+}
+
+.flex-inner {
+    display: flex;
+}
+
+.input-1 {
+    position: absolute;
+    left: 10vw;
+}
+
+.input-2:first-child {
+    position: absolute;
+    left: 40vw;
+}
+
+.input-2:not(:first) {
+    left: 70vw;
+}
+
+.input-3 {
+    position: absolute;
+    left: 70vw;
+}
+
+.myInput {
+    padding: 12px;
+    width: 20vw;
+    border: 1.75px solid #00B9FF;
+    background-color: black;
+    box-sizing: border-box;
+    color: white;
+    font-family: Azonix;
+}
+
+.myInput::placeholder {
+    padding: 8px;
+    font-family: Azonix;
+    color: #bbbbbb;
+    letter-spacing: 2px;
+}
+
+input:focus, select:focus {
+    outline: none;
+}
+
+button:focus, button:active {
+    outline: none;
+}
+
+select {
+    letter-spacing: 3px;
+    padding: 12px;
+}
+
+#submit-button {
+    height: 5vh;
+    width: 20vh;
+    margin-top: 10vh;
+    background-color: #00B9FF;
+    color: black;
+    font-family: Azonix;
+    font-size: 20px;
+    border: none;
+}
+
+#submit-button:hover {
+    color: #cccccc;
+    background-color: rgb(31, 105, 133);
+    cursor: pointer;
+}
+
+#submit-buuton:focus, #submit-butoon:active {
+    outline: none;
+}
+
+@media all and (max-width: 500px) {
+    #loader-text {
+        left: 25vw;
+        font-size: 20px;
+    }
+    #form-heading {
+        font-size: 10vw;
+    }
+    .flex-inner {
+        flex-direction: column;
+        align-items: center;
+    }
+    .input-1 {
+        position: relative;
+        margin-right: 20vw;
+        left: 0;
+        margin-left: 0;
+    }
+    .input-2 {
+        position: relative;
+        left: 0;
+        margin-right: 20vw;
+        margin-top: 2vh;
+    }
+    .input-3 {
+        position: relative;
+        left: 0;
+        margin-right: 20vw;
+        margin-top: 2vh;
+    }
+    .form-cont {
+        overflow-x: hidden;
+    }
+    /* .form {
+        margin-left: 20vw;
+    } */
+    .flex-outer>ul {
+        margin-top: 6vh;
+    }
+    .myInput {
+        width: 75vw;
+    }
+}

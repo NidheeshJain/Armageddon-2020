@@ -4,8 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Armageddon '20</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./styles/index.css">
     <style>
 
     </style>
@@ -13,10 +12,7 @@
 
 <body>
     <div class="loader">
-        <div id="apogee-img-div">
-            <img class="apogee-img" src="assets/img/Apogee@2x.png">
-        </div>
-        <div id="loader-text"></div>
+        <div id="loader-text" style="text-align: center;"></div>
     </div>
     <div id="wrapper">
         <div id="home">
@@ -40,7 +36,7 @@
                 <div id="about-us-nav"><a class="nav-button" onclick="sidebarClose('#about-cont')">ABOUT US</a></div>
                 <div id="right-nav">
                     <div class="nav-button" onclick="sidebarClose('#contact-heading')">CONTACT</div>
-                    <div class="nav-button register" onclick="sidebarClose('#form-container')">REGISTER</div>
+                    <div class="nav-button register" onclick="window.open('./register.html#register', '_blank'); sidebarClose(null)">REGISTER</div>
                 </div>
             </nav>
             <div id="home-images" onclick="func(this.id)">
@@ -126,59 +122,19 @@
                 </div>
             </div>
         </div>
-        <div class="form-cont" id="form-container" onclick="func(this.id)">
-            <div id="form-heading">REGISTER</div>
-            <form class="form" onsubmit="submitForm(event)">
-                <ul class="flex-outer">
-                    <ul class="flex-inner">
-                        <li class="input-1">
-                            <input type="text" name="squadName" class="myInput squad-name" placeholder="squad name">
-                        </li>
-                        <li class="input-2">
-                           <select class="myInput selectGame" name="selectGame">
-                            <option value="0">GAME</option>
-                            <option value="1">PUBG</option>
-                            <option value="2">COD</option>
-                           </select>
-                           <li class="input-3">
-                            <select class="myInput" name="noOfPersons" oninput="inputRenderer(event, event.target.value)">
-                                <option value="0">NO. OF PLAYERS</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
-                        </li>
-                        </li>
-                    </ul>
-                </ul>
-                <button type="submit" id="submit-button">SUBMIT</button>
-            </form>
-            <div id="form-status">
-                <div id="status-img">
-                    <!-- <img src="assets/ui/tick.png"> -->
-                </div>
-                <div id="status-msg"></div>
-            </div>
-        </div>
         <div class="contact-cont">
             <div id="contact-heading">
                 CONTACT US
             </div>
             <div id= contact-info>
-                ISHAN GARG : 0123456789
-                <br>
-                <br>
-                NIDHEESH JAIN : 6969696969
-                <br>
-                <br>
-                PRIYANSHU SHUKLA : 4204206969
+                <div>Amartya : <a href="tel:7014425412">7014425412</a></div> 
+                <div>Yash : <a href="tel:6264629373">6264629373</a></div>
                 <br>
                 <br>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
