@@ -6,76 +6,76 @@ let pageStatus = null
 var progress = null
 var animationInterval = 33
 document.onreadystatechange = () => {
-   // console.log('hi');
-    if(document.readyState === "complete")
+    // console.log('hi');
+    if (document.readyState === "complete")
         pageStatus = "complete"
 }
 
-function updateProgress () {
+function updateProgress() {
     //console.log(progress)
-    if(pageStatus === "complete") {
+    if (pageStatus === "complete") {
         // setTimeout(() => {
         //     document.querySelector('.loader').innerHTML = 100
         // document.querySelector('.loader').style.display = "none"
         // document.querySelector('.loader').style.zIndex = "-1"
         // document.querySelector('#wrapper').style.opacity = "1"
         // document.querySelector('#wrapper').style.display = "flex"
-            
+
         // }, 5000)
         document.querySelector('#loader-text').innerHTML = `Loading... 100 %`
         setTimeout(() => {
-        document.querySelector('#loader-text').style.display = "none"
-        document.querySelector('#loader-text').style.zIndex = "-1"
-        document.querySelector('.loader').style.height = "0"
-        document.querySelector('.loader').style.width = "0"
-        document.querySelector('.wrapper').style.opacity = "1"
-        document.querySelector('.wrapper').style.display = "flex"
+            document.querySelector('#loader-text').style.display = "none"
+            document.querySelector('#loader-text').style.zIndex = "-1"
+            document.querySelector('.loader').style.height = "0"
+            document.querySelector('.loader').style.width = "0"
+            document.querySelector('.wrapper').style.opacity = "1"
+            document.querySelector('.wrapper').style.display = "flex"
         }, 600)
     }
     else {
-        if(progress == null){
+        if (progress == null) {
             progress = 1;
         }
-       
+
         progress = progress + 1;
-        if(progress >= 0 && progress <= 30){
+        if (progress >= 0 && progress <= 30) {
             animationInterval += 1;
             document.querySelector('#loader-text').innerHTML = `Loading ${progress} %`;
         }
-        else if(progress > 30 && progress <= 60){
+        else if (progress > 30 && progress <= 60) {
             animationInterval += 2;
             document.querySelector('#loader-text').innerHTML = `Loading ${progress} %`;
         }
-        else if(progress > 60 && progress <= 80){
+        else if (progress > 60 && progress <= 80) {
             animationInterval += 4;
             document.querySelector('#loader-text').innerHTML = `Loading ${progress} %`;
         }
-        else if(progress > 80 && progress <= 90){
+        else if (progress > 80 && progress <= 90) {
             animationInterval += 8;
             document.querySelector('#loader-text').innerHTML = `Loading ${progress} %`;
         }
-        else if(progress > 90 && progress <= 95){
+        else if (progress > 90 && progress <= 95) {
             animationInterval += 100;
             document.querySelector('#loader-text').innerHTML = `Loading ${progress} %`;
         }
-        else if(progress > 95 && progress <= 99){
+        else if (progress > 95 && progress <= 99) {
             animationInterval += 180;
             document.querySelector('#loader-text').innerHTML = `Loading ${progress} %`;
         }
-        else if(progress >= 100){
+        else if (progress >= 100) {
             document.querySelector('#loader-text').innerHTML = `Loading 99 %`;
         }
-        setTimeout(updateProgress, animationInterval);    
+        setTimeout(updateProgress, animationInterval);
     }
+}
+var intervalObject_1 = setInterval(function () {
+    //console.log('hi')
+    var element = document.querySelector("body");
+    if (element != undefined) {
+        clearInterval(intervalObject_1);
+        updateProgress();
     }
-    var intervalObject_1 = setInterval(function(){
-        //console.log('hi')
-        var element = document.querySelector("body");
-        if(element != undefined){
-            clearInterval(intervalObject_1);
-            updateProgress();            
-        }
-    }, 1);
+}, 1);
 
 let finalObj = {
     team_name: null,
@@ -142,7 +142,7 @@ function submitForm(event) {
     }
     //console.log(form.elements[0].value)
     //console.log(form)
-   // console.log(JSON.stringify(finalObj))
+    // console.log(JSON.stringify(finalObj))
 
     document.getElementById('form-status').style.display = "flex"
     document.getElementById('status-img').innerHTML = `
@@ -163,10 +163,11 @@ function submitForm(event) {
             document.getElementById('status-img').innerHTML = `
     <img src="assets/ui/tick.png">
     `
-            
+            document.getElementById('form-status').style.borderColor = `#00B9FF`
             document.getElementById('status-msg').innerHTML = `
         Successful
     `
+            document.getElementById('modalForm')
         }
         else {
             document.getElementById('status-img').innerHTML = document.getElementById('status-img').innerHTML = `
@@ -194,6 +195,6 @@ function submitForm(event) {
             document.getElementById('status-msg').innerHTML = `
         An error occured
     `
-    document.getElementById('form-status').style.borderColor = `red`
+            document.getElementById('form-status').style.borderColor = `red`
         })
-    }
+}

@@ -12,14 +12,16 @@
     font-family: Stem-Regular;
     src: url(../assets/fonts/Stem-Bold/Stem-Regular.otf);
 }
+
 * {
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
-    .loader {
-        position: absolute;
-        top: 0;
-        left: 0;
+
+.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
     font-family: Azonix;
     height: 100vh;
     width: 100vw;
@@ -39,7 +41,6 @@
     top: 45vh;
 }
 
-
 .wrapper {
     position: absolute;
     top: 0;
@@ -48,12 +49,17 @@
     opacity: 0;
     justify-content: center;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url(../assets/ui/Rectangle\ 1.png);
     background-attachment: fixed;
     background-size: 100vw 100vh;
     background-repeat: repeat-y;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
+
 .form-cont {
     width: 100vw;
     margin-bottom: 8px;
@@ -78,8 +84,8 @@
     margin-top: 2.5vh;
     border: 2px dashed #00B9FF;
     padding: 10px;
-    width:fit-content;
-    margin:auto;
+    width: fit-content;
+    margin: auto;
 }
 
 #status-msg {
@@ -182,6 +188,69 @@ select {
 
 #submit-buuton:focus, #submit-butoon:active {
     outline: none;
+}
+
+#paymentModalWrapper {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 69;
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#paymentModal {
+    box-sizing: border-box;
+    width: 300px;
+    padding: 20px 50px 20px 50px;
+    background-color: dimgray;
+    display: flex;
+    flex-direction: column;
+}
+
+#paymentForm {
+    width: 100%;
+    text-align: left;
+    font-family: Stem-Regular;
+}
+
+#paymentHeading{
+    font-family:Stem-Bold;
+    color:white;
+    width:100%;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin-bottom:20px;
+    font-size:2em;
+}
+
+#paymentForm label {
+    color: rgb(230, 230, 230);
+}
+
+#paymentForm input {
+    width: 100%;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+#paymentForm [type="submit"] {
+    width: auto;
+    text-align: center;
+    margin: 10px auto 10px auto;
+    display: block;
+    height: auto;
+    background-color: #00B9FF;
+    color: black;
+    font-family: Stem-Regular;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
 }
 
 @media all and (max-width: 500px) {

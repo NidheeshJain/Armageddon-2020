@@ -1,53 +1,71 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Armageddon '20</title>
-        <link rel="stylesheet" href="./styles/register.css">
-    </head>
-    <body>
-        <div class="loader">
-            <div id="loader-text"></div>
-        </div>
-        <div class="wrapper">
-            <!-- <p>Register works</p> -->
-            <div class="form-cont" id="form-container">
-                <div id="form-heading">REGISTRATION</div>
-                <form class="form" onsubmit="submitForm(event)">
-                    <ul class="flex-outer">
-                        <ul class="flex-inner">
-                            <li class="input-1">
-                                <input type="text" name="squadName" class="myInput squad-name" placeholder="squad name">
-                            </li>
-                            <li class="input-2">
-                               <select class="myInput selectGame" name="selectGame">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armageddon '20</title>
+    <link rel="stylesheet" href="./styles/register.css">
+</head>
+
+<body>
+    <div class="loader">
+        <div id="loader-text"></div>
+    </div>
+    <div class="wrapper">
+        <!-- <p>Register works</p> -->
+        <div class="form-cont" id="form-container">
+            <div id="form-heading">REGISTRATION</div>
+            <form class="form" onsubmit="submitForm(event)">
+                <ul class="flex-outer">
+                    <ul class="flex-inner">
+                        <li class="input-1">
+                            <input type="text" name="squadName" class="myInput squad-name" placeholder="squad name">
+                        </li>
+                        <li class="input-2">
+                            <select class="myInput selectGame" name="selectGame">
                                 <option value="0">GAME</option>
                                 <option value="1">PUBG</option>
                                 <option value="2">COD</option>
-                               </select>
-                               <li class="input-3">
-                                <select class="myInput" name="noOfPersons" oninput="inputRenderer(event, event.target.value)">
-                                    <option value="0">NO. OF PLAYERS</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </li>
-                            </li>
-                        </ul>
+                            </select>
+                        <li class="input-3">
+                            <select class="myInput" name="noOfPersons"
+                                oninput="inputRenderer(event, event.target.value)">
+                                <option value="0">NO. OF PLAYERS</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </li>
+                        </li>
                     </ul>
-                    <button type="submit" id="submit-button">SUBMIT</button>
-                </form>
-                <div id="form-status">
-                    <div id="status-img">
-                        <!-- <img src="assets/ui/tick.png"> -->
-                    </div>
-                    <div id="status-msg"></div>
+                </ul>
+                <button type="submit" id="submit-button">SUBMIT</button>
+            </form>
+            <div id="form-status">
+                <div id="status-img">
+                    <!-- <img src="assets/ui/tick.png"> -->
                 </div>
+                <div id="status-msg"></div>
             </div>
         </div>
-        <script src="register.js"></script>
-    </body>
+        <!-- <div id="paymentModalWrapper">
+                <div id="paymentModal">
+                    <div id="paymentHeading">Pay Now</div>
+                    <form action="https://www.bits-apogee.org/arma/payment/" method="POST" target="_blank" id="paymentForm">
+                        <input type="text" name="team_name" id="team_name" placeholder="team name" required/>
+                        <label for="email">Email address: <span style="font-size: 0.7em; margin-top:-2px; display:block; margin-bottom: 7px;;">(to get payment confirmation)</span></label>
+                        <input type="email" name="email_id" id="email_id" placeholder="Email" required/>
+                        <input type="submit" value="Submit">  
+                    </form>
+                </div>
+            </div> -->
+        <div class="form-cont" id="form-container">
+            <div id="form-heading">Check Status</div>
+        </div>
+    </div>
+    <script src="register.js"></script>
+</body>
+
 </html>
