@@ -89,7 +89,7 @@
     text-align: center;
     margin-top: 2.5vh;
     color: white;
-    font-family: Azonix;
+    font-family: Stem-Bold;
     font-size: 40px;
 }
 
@@ -166,12 +166,12 @@ ul {
     background-color: black;
     box-sizing: border-box;
     color: white;
-    font-family: Azonix;
+    font-family: Stem-Regular;
 }
 
 .myInput::placeholder {
     padding: 8px;
-    font-family: Azonix;
+    font-family: Stem-Regular;
     color: #bbbbbb;
     letter-spacing: 2px;
 }
@@ -272,6 +272,7 @@ select {
     width: auto;
     text-align: center;
     margin: 10px auto 10px auto;
+    padding: 7px 20px 7px 20px;
     display: block;
     height: auto;
     background-color: #00B9FF;
@@ -280,6 +281,10 @@ select {
     font-size: 20px;
     border: none;
     cursor: pointer;
+}
+
+#paymentForm [type="submit"]:hover {
+    background-color: #31819e;
 }
 
 .modalWrapper {

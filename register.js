@@ -104,20 +104,20 @@ function inputRenderer(event, value) {
     for (let i = 1; i <= value; ++i) {
         flexOuter.innerHTML += `<ul class="flex-inner member-name-username">
         <li class="input-1">
-            <input type="text" class="myInput member-name " placeholder="name member ${i}">
+            <input type="text" class="myInput member-name " placeholder="Name Member ${i}">
         </li>
         <li class="input-3">
-            <input type="text" class="myInput member-username" placeholder="username ${i}">
+            <input type="text" class="myInput member-username" placeholder="Username ${i}">
         </li>
     </ul>`
     }
     for (let i = 1; i <= value; ++i) {
         flexOuter.innerHTML += `<ul class="flex-inner member-phone-email">
         <li class="input-1">
-            <input type="number" class="myInput member-phone " placeholder="phone no ${i}">
+            <input type="number" class="myInput member-phone " placeholder="Phone Number ${i}">
         </li>
         <li class="input-3">
-            <input type="email" class="myInput member-email" placeholder="email member ${i}">
+            <input type="email" class="myInput member-email" placeholder="Mail ID ${i}">
         </li>
     </ul>`
     }
