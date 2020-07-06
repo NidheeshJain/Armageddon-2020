@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Armageddon '20</title>
     <link rel="stylesheet" href="./styles/register.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -13,8 +14,13 @@
         <div id="loader-text"></div>
     </div>
     <div class="wrapper">
+        <div class="nav">
+            <div style="width: auto; height: auto; margin: 0; overflow: hidden;" onclick="window.open('./index.html', '_blank')">
+                <img src='assets/img/back-icon.png'class='back-icon'> 
+            </div>
+        </div>
         <!-- <p>Register works</p> -->
-        <div class="form-cont" id="form-container">
+        <div class="form-cont" id="form-container" style="margin-top: 10vh;">
             <div id="form-heading">REGISTRATION</div>
             <form class="form" onsubmit="submitForm(event)">
                 <ul class="flex-outer">
@@ -63,6 +69,26 @@
             </div> -->
         <div class="form-cont" id="form-container">
             <div id="form-heading">Check Status</div>
+            <form class="form2" onsubmit="checkStatus(event)">
+                <ul class="flex-outer">
+                    <ul class="flex-inner">
+                        <li class="input-15">
+                            <input type="text" name="squadName" class="myInput squad-name2" placeholder="squad name">
+                        </li>
+                        <li class="input-25">
+                            <input type="text" name="squadMail" class="myInput squad-mail" placeholder="Mail ID">
+                        </li>
+                        
+                    </ul>
+                </ul>
+                <button type="submit" id="submit-button">SUBMIT</button>
+            </form>
+            <div id="form-status">
+                <div id="status-img">
+                    <!-- <img src="assets/ui/tick.png"> -->
+                </div>
+                <div id="status-msg"></div>
+            </div>
         </div>
     </div>
     <script src="register.js"></script>
