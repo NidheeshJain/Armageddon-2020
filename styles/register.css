@@ -16,7 +16,6 @@
 * {
     overflow-x: hidden;
     scroll-behavior: smooth;
-    color: white;
 }
 
 .loader {
@@ -241,7 +240,6 @@ select {
     font-size: 0.9em;
     font-family: Stem-Regular;
 }
-
 #paymentForm {
     width: 100%;
     text-align: left;

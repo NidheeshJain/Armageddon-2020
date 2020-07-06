@@ -173,12 +173,17 @@ function submitForm(event) {
             document.getElementById('status-msg').innerHTML = `
         Successful
     `
-
             Promise.resolve(responseData).then(function (value) {
                 var responseJSON = value;// "Success"
-                document.getElementById('team_name_payment').value = document.getElementById('team_name').value;
+                console.log(finalObj.team_name)
+                document.getElementById('team_name_payment').value = finalObj.team_name;
                 document.getElementById('paymentModalMessage').innerHTML = `Your Team ID is ${responseJSON.team_id} <br/><br/> <i>After getting the success message from gateway, <br/>Please Refresh this page and check your payment status.</i>`;
                 openPaymentModal();
+                finalObj = {
+                    team_name: null,
+                    game_id: null,
+                    team_members: []
+                }
             }, function (value) {
                 // not called
             });
@@ -196,12 +201,22 @@ function submitForm(event) {
         Sending...
     `
                 document.getElementsByClassName('modalWrapper')[0].style.display = "flex";
+                finalObj = {
+                    team_name: null,
+                    game_id: null,
+                    team_members: []
+                }
             }, function (value) {
                 // not called
             });
 
         }
         else {
+            finalObj = {
+                team_name: null,
+                game_id: null,
+                team_members: []
+            }
             document.getElementById('status-img').innerHTML = document.getElementById('status-img').innerHTML = `
             <img src="assets/ui/criss-cross.png">
             `
@@ -212,11 +227,6 @@ function submitForm(event) {
         }
         //console.log(response.json())
 
-        finalObj = {
-            team_name: null,
-            game_id: null,
-            team_members: []
-        }
         //form.elements.map(element => element.value = '')
     })
         .catch(error => {

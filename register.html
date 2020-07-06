@@ -15,8 +15,9 @@
     </div>
     <div class="wrapper">
         <div class="nav">
-            <div style="width: auto; height: auto; margin: 0; overflow: hidden;" onclick="window.open('./index.html', '_blank')">
-                <img src='assets/img/back-icon.png'class='back-icon'> 
+            <div style="width: auto; height: auto; margin: 0; overflow: hidden;"
+                onclick="window.open('./index.html', '_blank')">
+                <img src='assets/img/back-icon.png' class='back-icon'>
             </div>
         </div>
         <!-- <p>Register works</p> -->
@@ -26,7 +27,8 @@
                 <ul class="flex-outer">
                     <ul class="flex-inner">
                         <li class="input-1">
-                            <input type="text" name="squadName" class="myInput squad-name" placeholder="Squad Name" id="team_name">
+                            <input type="text" name="squadName" class="myInput squad-name" placeholder="Squad Name"
+                                id="team_name">
                         </li>
                         <li class="input-2">
                             <select class="myInput selectGame" name="selectGame">
@@ -57,18 +59,21 @@
             </div>
         </div>
         <div id="paymentModalWrapper">
-                <div id="paymentModal">
-                    <div id="paymentModalMessage"></div>
-                    <div id="paymentHeading">Pay Now</div>
-                    <form onsubmit="checkStatus()" id="paymentForm">
-                        <label for="tem_name">Team Name:</label>
-                        <input type="text" name="team_name" id="team_name_payment" placeholder="Team Name" required value="" readonly/>
-                        <label for="email">Email address: <span style="font-size: 0.7em; margin-top:-2px; display:block; margin-bottom: 7px;;">(to get payment confirmation)</span></label>
-                        <input type="email" name="email_id" id="email_id" placeholder="Email" required/>
-                        <input type="submit" value="Submit">  
-                    </form>
-                </div>
+            <div id="paymentModal">
+                <div id="paymentModalMessage"></div>
+                <div id="paymentHeading">Pay Now</div>
+                <form id="paymentForm" action="https://www.bits-apogee.org/arma/payment/" method="POST" target="_blank">
+                    <label for="tem_name">Team Name:</label>
+                    <input type="text" name="team_name" id="team_name_payment" placeholder="Team Name" required value=""
+                        readonly />
+                    <label for="email">Email address: <span
+                            style="font-size: 0.7em; margin-top:-2px; display:block; margin-bottom: 7px;;">(to get
+                            payment confirmation)</span></label>
+                    <input type="email" name="email_id" id="email_id" placeholder="Email" required />
+                    <input type="submit" value="Submit">
+                </form>
             </div>
+        </div>
         <div class="modalWrapper">
             <div class="modal">
                 <div class="heading">Error!</div>
@@ -92,7 +97,7 @@
                         <div class="inner-heading team-id-heading">Team ID: </div>
                         <div class="inner-data team-id-data"></div>
                     </div>
-                <div class="closeButton" onclick="closeModal(1)">Close</div>
+                    <div class="closeButton" onclick="closeModal(1)">Close</div>
                 </div>
             </div>
         </div>
@@ -107,7 +112,7 @@
                         <li class="input-25">
                             <input type="text" name="squadMail" class="myInput squad-mail" placeholder="Mail ID">
                         </li>
-                        
+
                     </ul>
                 </ul>
                 <button type="submit" id="submit-button">SUBMIT</button>
