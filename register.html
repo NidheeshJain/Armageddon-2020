@@ -60,7 +60,7 @@
                 <div id="paymentModal">
                     <div id="paymentModalMessage"></div>
                     <div id="paymentHeading">Pay Now</div>
-                    <form action="https://www.bits-apogee.org/arma/payment/" method="POST" target="_blank" id="paymentForm">
+                    <form onsubmit="checkStatus()" id="paymentForm">
                         <label for="tem_name">Team Name:</label>
                         <input type="text" name="team_name" id="team_name_payment" placeholder="Team Name" required value="" readonly/>
                         <label for="email">Email address: <span style="font-size: 0.7em; margin-top:-2px; display:block; margin-bottom: 7px;;">(to get payment confirmation)</span></label>
@@ -73,7 +73,27 @@
             <div class="modal">
                 <div class="heading">Error!</div>
                 <div id="responseErrorModalMessage"></div>
-                <div class="closeButton" onclick="closeModal()">Close</div>
+                <div class="closeButton" onclick="closeModal(0)">Close</div>
+            </div>
+        </div>
+        <div class="modalWrapper">
+            <div class="modal checkStatus">
+                <div class="heading paymentStatus"></div>
+                <div class="responseErrorModalMessage team-data">
+                    <div class="inner-divs team-name">
+                        <div class="inner-heading team-name-heading">Team Name: </div>
+                        <div class="inner-data team-name-data"></div>
+                    </div>
+                    <div class="inner-divs team-game">
+                        <div class="inner-heading team-game-heading">Game: </div>
+                        <div class="inner-data team-game-data"></div>
+                    </div>
+                    <div class="inner-divs team-id">
+                        <div class="inner-heading team-id-heading">Team ID: </div>
+                        <div class="inner-data team-id-data"></div>
+                    </div>
+                <div class="closeButton" onclick="closeModal(1)">Close</div>
+                </div>
             </div>
         </div>
         <div class="form-cont">
@@ -92,11 +112,11 @@
                 </ul>
                 <button type="submit" id="submit-button">SUBMIT</button>
             </form>
-            <div id="form-status">
-                <div id="status-img">
+            <div id="form-status-check">
+                <div id="status-img-check">
                     <!-- <img src="assets/ui/tick.png"> -->
                 </div>
-                <div id="status-msg"></div>
+                <div id="status-msg-check"></div>
             </div>
         </div>
     </div>

@@ -82,8 +82,8 @@ let finalObj = {
     game_id: null,
     team_members: []
 }
-function closeModal() {
-    document.getElementsByClassName('modalWrapper')[0].style.display = "none";
+function closeModal(id) {
+    document.getElementsByClassName('modalWrapper')[id].style.display = "none";
 }
 function openPaymentModal() {
     document.getElementById('paymentModalWrapper').style.display = "flex";
@@ -126,7 +126,6 @@ function inputRenderer(event, value) {
 }
 function submitForm(event) {
     event.preventDefault()
-    let form = document.querySelector('.form')
     const squadName = document.querySelector('.squad-name')
     const gameId = document.querySelector('.selectGame')
     finalObj.team_name = squadName.value
@@ -230,4 +229,58 @@ function submitForm(event) {
     `
             document.getElementById('form-status').style.borderColor = `red`
         })
+}
+
+async function checkStatus() {
+    event.preventDefault()
+    document.getElementById('form-status-check').style.display = "flex"
+    document.getElementById('status-img-check').innerHTML = `
+    <img src="assets/ui/loader.png">
+    `
+    document.getElementById('status-msg-check').innerHTML = `
+        Sending...
+    `
+    document.getElementById("status-msg-check").scrollIntoView()
+    //console.log("checking status")
+    const request = {
+        name_or_id: document.querySelector('.squad-name2').value,
+        email_id: document.querySelector('.squad-mail').value
+    }
+    //console.log(request)
+    fetch('https://www.bits-apogee.org/arma/check_status/', {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(request)
+    }).then(response=> {
+        document.getElementById('form-status-check').style.display = "none"
+        const promise = Promise.resolve(response.json())
+        if(response.ok) {
+            promise.then(value => {
+                //console.log(value)
+                document.getElementsByClassName("modalWrapper")[1].style.display = "flex"
+                if(value.paid) {
+                    document.querySelector('.paymentStatus').innerHTML = "Your payment is successful"
+                }
+                else {
+                    document.querySelector('.paymentStatus').innerHTML = "Your payment is pending"
+                }
+                document.querySelector(".team-name-data").innerHTML = value.team_name
+                document.querySelector(".team-game-data").innerHTML = value.game
+                document.querySelector(".team-id-data").innerHTML = value.team_id
+            })
+        }
+        else {
+            promise.then(value => {
+                document.getElementsByClassName("modalWrapper")[0].style.display = "flex"
+                var responseJSON = value;// "Success"
+                document.getElementById('responseErrorModalMessage').innerText = responseJSON.message;
+            }) 
+        }
+    })
+    .catch(error => {
+        console.log(error)
+    })
+
 }

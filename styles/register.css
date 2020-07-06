@@ -16,6 +16,7 @@
 * {
     overflow-x: hidden;
     scroll-behavior: smooth;
+    color: white;
 }
 
 .loader {
@@ -93,7 +94,7 @@
     font-size: 40px;
 }
 
-#form-status {
+#form-status, #form-status-check {
     display: none;
     margin-top: 2.5vh;
     border: 2px dashed #00B9FF;
@@ -102,7 +103,7 @@
     margin: auto;
 }
 
-#status-msg {
+#status-msg, #status-msg-check {
     color: white;
     font-family: Azonix;
     margin-top: 6px;
@@ -310,6 +311,14 @@ select {
     flex-direction: column;
     text-align:center;
     font-family: Stem-Regular;
+}
+
+.inner-divs {
+    display: flex;
+}
+.inner-data {
+    margin-left: 5px;
+    font-family: Stem-Bold;
 }
 
 .heading{
