@@ -82,6 +82,12 @@ let finalObj = {
     game_id: null,
     team_members: []
 }
+function closeModal() {
+    document.getElementsByClassName('modalWrapper')[0].style.display = "none";
+}
+function openPaymentModal() {
+    document.getElementById('paymentModalWrapper').style.display = "flex";
+}
 function inputRenderer(event, value) {
     event.preventDefault()
     let form = document.querySelector('.form')
@@ -159,6 +165,7 @@ function submitForm(event) {
         },
         body: JSON.stringify(finalObj)
     }).then(response => {
+        var responseData = response.json();
         if (response.ok) {
             document.getElementById('status-img').innerHTML = `
     <img src="assets/ui/tick.png">
@@ -167,7 +174,33 @@ function submitForm(event) {
             document.getElementById('status-msg').innerHTML = `
         Successful
     `
-            document.getElementById('modalForm')
+
+            Promise.resolve(responseData).then(function (value) {
+                var responseJSON = value;// "Success"
+                document.getElementById('team_name_payment').value = document.getElementById('team_name').value;
+                document.getElementById('paymentModalMessage').innerHTML = `Your Team ID is ${responseJSON.team_id} <br/><br/> <i>After getting the success message from gateway, <br/>Please Refresh this page to check your payment status.</i>`;
+                openPaymentModal();
+            }, function (value) {
+                // not called
+            });
+                
+        }
+        else if (response.status == 412 || response.status == 400) {
+            Promise.resolve(responseData).then(function (value) {
+                var responseJSON = value;// "Success"
+                document.getElementById('responseErrorModalMessage').innerText = responseJSON.message;
+                document.getElementById('form-status').style.display = "none"
+                document.getElementById('status-img').innerHTML = `
+    <img src="assets/ui/loader.png">
+    `
+                document.getElementById('status-msg').innerHTML = `
+        Sending...
+    `
+                document.getElementsByClassName('modalWrapper')[0].style.display = "flex";
+            }, function (value) {
+                // not called
+            });
+
         }
         else {
             document.getElementById('status-img').innerHTML = document.getElementById('status-img').innerHTML = `
