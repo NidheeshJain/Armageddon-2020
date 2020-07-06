@@ -178,7 +178,7 @@ function submitForm(event) {
             Promise.resolve(responseData).then(function (value) {
                 var responseJSON = value;// "Success"
                 document.getElementById('team_name_payment').value = document.getElementById('team_name').value;
-                document.getElementById('paymentModalMessage').innerHTML = `Your Team ID is ${responseJSON.team_id} <br/><br/> <i>After getting the success message from gateway, <br/>Please Refresh this page to check your payment status.</i>`;
+                document.getElementById('paymentModalMessage').innerHTML = `Your Team ID is ${responseJSON.team_id} <br/><br/> <i>After getting the success message from gateway, <br/>Please Refresh this page and check your payment status.</i>`;
                 openPaymentModal();
             }, function (value) {
                 // not called
