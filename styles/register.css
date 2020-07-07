@@ -417,4 +417,7 @@ select {
         top: 0;
         left: -10vw;
     }
+    .bigMessage {
+        display: none;
+    }
 }
