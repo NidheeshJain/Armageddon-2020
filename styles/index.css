@@ -50,6 +50,10 @@ a {
     display: block;
 }
 
+.wf-loading .loader {
+    font-family: Azonix;
+}
+
 .wf-active .loader {
     font-family: Azonix;
 }

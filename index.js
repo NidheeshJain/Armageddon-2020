@@ -2,6 +2,7 @@
 
 //loader starts here
 //console.log("hi")
+console.log(document.documentElement.classList.contains("wf-active"))
 window.scrollTo({
     top: 0,
     left: 0,
