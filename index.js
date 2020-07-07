@@ -1,6 +1,7 @@
 //console.log(window.innerHeight, window.innerWidth)
 
 //loader starts here
+//console.log("hi")
 window.scrollTo({
     top: 0,
     left: 0,

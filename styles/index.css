@@ -41,13 +41,16 @@ a {
 }
 
 .loader {
-    font-family: Azonix;
     height: 100vh;
     width: 100vw;
     color: white;
     background-color: black;
     z-index: 30;
     display: block;
+}
+
+.wf-active .loader {
+    font-family: Azonix;
 }
 
 #loader-text {
