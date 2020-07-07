@@ -360,10 +360,7 @@ select {
     display: none;
 }
 .message {
-    width: 25vw;
-    position: absolute;
-    top: 85vh;
-    left: 7.5vw;
+    display: none;
 }
 .message-text {
     font-family: Stem-Regular;
@@ -414,6 +411,7 @@ select {
         width: 75vw;
     }
     .message {
+        display: block;
         width: 75vw;
         position: relative;
         top: 0;
