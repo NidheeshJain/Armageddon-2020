@@ -32,10 +32,11 @@
 }
 
 #loader-text {
-    position: absolute;
+    position: relative;
     height: 50vw;
     width: 60vw;
-    left: 40vw;
+    left: 20vw;
+    text-align: center;
     top: 25vw;
     font-size: 30px;
     top: 45vh;
@@ -351,7 +352,6 @@ select {
 
 @media all and (max-width: 500px) {
     #loader-text {
-        left: 25vw;
         font-size: 20px;
     }
     #form-heading {

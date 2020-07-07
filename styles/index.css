@@ -514,6 +514,6 @@ nav {
         flex-direction: column;
     }
     #contact-info div:not(:first-of-type) {
-        margin-top: 12px;
+        margin-top: 4vh;
     }
 }
