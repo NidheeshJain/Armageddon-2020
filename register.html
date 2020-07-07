@@ -39,7 +39,6 @@
                             <select class="myInput" name="noOfPersons"
                                 oninput="inputRenderer(event, event.target.value)">
                                 <option value="0">NO. OF PLAYERS</option>
-                                <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
@@ -97,6 +96,10 @@
                         <div class="inner-data team-id-data"></div>
                     </div>
                     <div class="closeButton" onclick="closeModal(1)">Close</div>
+                    <div class="paymentButton closeButton" onclick="closeModal(1); openPaymentModal();">Pay Now</div>
+                    <div class="modalMessage">
+                        <p class="message-text">In case of any discrepancy, contact ... at ...</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -105,11 +108,21 @@
             <form class="form2" onsubmit="checkStatus(event)">
                 <ul class="flex-outer">
                     <ul class="flex-inner">
-                        <li class="input-15">
+                        <li class="input-1">
                             <input type="text" name="squadName" class="myInput squad-name2" placeholder="Squad Name">
                         </li>
-                        <li class="input-25">
-                            <input type="text" name="squadMail" class="myInput squad-mail" placeholder="Mail ID">
+                        <li class="message">
+                            <p class="message-text">Squad Name is Case-Sensitive</p>
+                        </li>
+                        <li class="input-3">
+                            <input type="text" name="squadMail" class="myInput squad-mail" placeholder="Mail ID (of any 1 team member)">
+                        </li>
+                        <li class="input-2">
+                            <select class="myInput selectGameStatus" name="selectGame">
+                                <option value="0">GAME</option>
+                                <option value="1">PUBG</option>
+                                <option value="2">COD</option>
+                            </select>
                         </li>
 
                     </ul>

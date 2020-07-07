@@ -126,6 +126,7 @@ function inputRenderer(event, value) {
 }
 function submitForm(event) {
     event.preventDefault()
+    document.getElementById('team_name_payment').value = ""
     const squadName = document.querySelector('.squad-name')
     const gameId = document.querySelector('.selectGame')
     finalObj.team_name = squadName.value
@@ -187,7 +188,7 @@ function submitForm(event) {
             }, function (value) {
                 // not called
             });
-                
+
         }
         else if (response.status == 412 || response.status == 400) {
             Promise.resolve(responseData).then(function (value) {
@@ -243,6 +244,7 @@ function submitForm(event) {
 
 async function checkStatus() {
     event.preventDefault()
+    document.getElementById('team_name_payment').value = "";
     document.getElementById('form-status-check').style.display = "flex"
     document.getElementById('status-img-check').innerHTML = `
     <img src="assets/ui/loader.png">
@@ -254,6 +256,7 @@ async function checkStatus() {
     //console.log("checking status")
     const request = {
         name_or_id: document.querySelector('.squad-name2').value,
+        game_id: document.querySelector(".selectGameStatus").value,
         email_id: document.querySelector('.squad-mail').value
     }
     //console.log(request)
@@ -263,22 +266,24 @@ async function checkStatus() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(request)
-    }).then(response=> {
+    }).then(response => {
         document.getElementById('form-status-check').style.display = "none"
         const promise = Promise.resolve(response.json())
-        if(response.ok) {
+        if (response.ok) {
             promise.then(value => {
                 //console.log(value)
                 document.getElementsByClassName("modalWrapper")[1].style.display = "flex"
-                if(value.paid) {
+                document.querySelector(".team-name-data").innerHTML = value.team_name
+                document.querySelector(".team-game-data").innerHTML = value.game
+                document.querySelector(".team-id-data").innerHTML = value.team_id
+                if (value.paid) {
                     document.querySelector('.paymentStatus').innerHTML = "Your payment is successful"
                 }
                 else {
                     document.querySelector('.paymentStatus').innerHTML = "Your payment is pending"
+                    document.querySelector('.paymentButton').style.display = "block"
+                    document.getElementById('team_name_payment').value = request.name_or_id;
                 }
-                document.querySelector(".team-name-data").innerHTML = value.team_name
-                document.querySelector(".team-game-data").innerHTML = value.game
-                document.querySelector(".team-id-data").innerHTML = value.team_id
             })
         }
         else {
@@ -286,11 +291,11 @@ async function checkStatus() {
                 document.getElementsByClassName("modalWrapper")[0].style.display = "flex"
                 var responseJSON = value;// "Success"
                 document.getElementById('responseErrorModalMessage').innerText = responseJSON.message;
-            }) 
+            })
         }
     })
-    .catch(error => {
-        console.log(error)
-    })
+        .catch(error => {
+            console.log(error)
+        })
 
 }

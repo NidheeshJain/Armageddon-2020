@@ -61,8 +61,8 @@
     align-items: center;
 }
 .nav{
-    top: 0;
     position: fixed;
+    top: 0;
     display: flex;
     justify-content: flex-start;
     width: 100vw;
@@ -315,7 +315,13 @@ select {
 .inner-divs {
     display: flex;
 }
+.inner-heading {
+    position: relative;
+    left: 0;
+    width: 50%;
+}
 .inner-data {
+    width: 100%;
     margin-left: 5px;
     font-family: Stem-Bold;
 }
@@ -348,6 +354,22 @@ select {
     font-size: 16px;
     border: none;
     cursor: pointer;
+}
+.paymentButton {
+    background-color: #00B9FF;
+    display: none;
+}
+.message {
+    width: 25vw;
+    position: absolute;
+    top: 85vh;
+    left: 7.5vw;
+}
+.message-text {
+    font-family: Stem-Regular;
+    font-style: italic;
+    text-align: center;
+    color: white;
 }
 
 @media all and (max-width: 500px) {
@@ -390,5 +412,11 @@ select {
     }
     .myInput {
         width: 75vw;
+    }
+    .message {
+        width: 75vw;
+        position: relative;
+        top: 0;
+        left: -10vw;
     }
 }
