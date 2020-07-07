@@ -30,7 +30,7 @@ function updateProgress() {
             document.querySelector('.loader').style.width = "0"
             document.querySelector('.wrapper').style.opacity = "1"
             document.querySelector('.wrapper').style.display = "flex"
-        }, 6000)
+        }, 600)
     }
     else {
         if (progress == null) {
