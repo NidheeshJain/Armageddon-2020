@@ -210,6 +210,10 @@ select {
 #submit-buuton:focus, #submit-butoon:active {
     outline: none;
 }
+#deadline {
+    position: relative;
+    bottom: -10vh;
+}
 
 #paymentModalWrapper {
     position: fixed;
