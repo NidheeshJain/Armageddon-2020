@@ -318,7 +318,8 @@ select {
 .inner-heading {
     position: relative;
     left: 0;
-    width: 50%;
+    width: 100%;
+    text-align: left;
 }
 .inner-data {
     width: 100%;
@@ -331,6 +332,14 @@ select {
     font-size: 1.5em;
     width:100%;
     margin-bottom:10px;
+}
+.team-members-data {
+    position: relative;
+    left: 0;
+    margin-left: -250px;
+}
+.member-data {
+    width: 100%;
 }
 
 #responseErrorModalMessage{
