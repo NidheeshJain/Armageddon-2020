@@ -123,6 +123,7 @@ function inputRenderer(event, value) {
     }
     document.getElementsByClassName('squad-name')[0].value = squadName
     document.getElementsByClassName('selectGame')[0].value = gameId
+    document.querySelector('.noOfPlayers').value=value
 }
 function submitForm(event) {
     event.preventDefault()
