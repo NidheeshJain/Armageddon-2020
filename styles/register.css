@@ -236,7 +236,17 @@ select {
     display: flex;
     flex-direction: column;
 }
-
+.prizes {
+    display: flex;
+    justify-content: center;
+}
+#prizeList {
+    width: 25%;
+}
+#prize-heading {
+    position: relative;
+    left: 6vw;
+}
 #paymentModalMessage{
     width: 100%;
     color:white;
@@ -432,5 +442,11 @@ select {
     }
     .bigMessage {
         display: none;
+    }
+    #prizeList {
+        width: fit-content;
+    }
+    #prize-heading {
+        left: 0;
     }
 }
