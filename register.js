@@ -282,7 +282,7 @@ async function checkStatus() {
                 }
                 else {
                     document.querySelector('.paymentStatus').innerHTML = "Your payment is pending"
-                    document.querySelector('.paymentButton').style.display = "block"
+                    //document.querySelector('.paymentButton').style.display = "block"
                     document.getElementById('team_name_payment').value = request.name_or_id;
                 }
             })
